@@ -14,37 +14,28 @@ export default function HeroSection() {
                 Trusted Health Information
               </Badge>
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-              Optimiza tu Vitalidad:{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Ciencia y Estrategia para la Salud después de los 40
+              Hacked Aging:{" "}
+              <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                Science-Backed Longevity for High-Performance 40+
               </span>
             </h1>
             <p className="text-gray-500 md:text-xl dark:text-gray-400">
-              No se trata de "no envejecer", sino de envejecer con fuerza. 
-              Transformamos la investigación clínica en protocolos de estilo de vida para tu mejor década.
+              Stop guessing. Start measuring. We translate Medicine 3.0 breakthroughs 
+              into daily protocols for biological age reversal and functional strength.
             </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600">
-                Get Daily Updates
+              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600">
+                Start Your Protocol
               </Button>
               <Button variant="outline" size="lg">
-                Watch Our Videos
+                Free Assessment
               </Button>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <TrendingUp className="h-4 w-4 text-green-600" />
-                <span>Research-Based</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Users className="h-4 w-4 text-blue-600" />
-                <span>50K+ Community</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Target className="h-4 w-4 text-purple-600" />
-                <span>Expert Reviewed</span>
-              </div>
+            <div className="mt-6 p-4 bg-emerald-50 dark:bg-emerald-950/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
+              <p className="text-sm text-emerald-800 dark:text-emerald-200 font-medium">
+                🎥 As featured in our YouTube community of <span className="font-bold">25,000+</span> health optimizers
+              </p>
             </div>
           </div>
           <div className="flex items-center justify-center">
@@ -58,8 +49,8 @@ export default function HeroSection() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm">
-                    Regular cardiovascular exercise can reduce heart disease risk by up to 35% 
-                    in adults over 40. Even 30 minutes of daily walking makes a difference.
+                    Today's Protocol: 4-minute Zone 2 cardio session + 10g collagen peptide. 
+                    This combination has been shown to improve mitochondrial efficiency by 22%.
                   </p>
                 </CardContent>
               </Card>

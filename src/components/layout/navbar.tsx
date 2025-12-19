@@ -6,8 +6,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="hidden font-bold sm:inline-block text-xl">
-            Health Over 40
+          <span className="hidden font-bold sm:inline-block text-xl bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+            Hacked Aging
           </span>
         </Link>
         
@@ -19,19 +19,25 @@ export default function Navbar() {
             Home
           </Link>
           <Link
-            href="/about"
+            href="/pillars"
             className="transition-colors hover:text-foreground/80 text-foreground/60"
           >
-            About
+            Pillars
           </Link>
           <Link
-            href="/tools"
+            href="/recovery"
             className="transition-colors hover:text-foreground/80 text-foreground/60"
           >
-            Longevity Lab
+            Recovery Lab
           </Link>
           <Link
-            href="/blog"
+            href="/protocols"
+            className="transition-colors hover:text-foreground/80 text-foreground/60"
+          >
+            Protocols
+          </Link>
+          <Link
+            href="/research"
             className="transition-colors hover:text-foreground/80 text-foreground/60"
           >
             Research
@@ -40,10 +46,10 @@ export default function Navbar() {
         
         <div className="ml-auto flex items-center space-x-4">
           <Button variant="ghost" size="sm">
-            Newsletter
+            Free Assessment
           </Button>
-          <Button size="sm">
-            Subscribe
+          <Button size="sm" className="bg-gradient-to-r from-emerald-600 to-blue-600">
+            Join Community
           </Button>
         </div>
       </div>

@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Health Over 40 - Your Wellness Journey",
-  description: "Daily health news, research, and product reviews for adults over 40. Expert insights on nutrition, fitness, and wellness.",
+  title: "Hacked Aging - Science-Backed Longevity for High-Performance 40+",
+  description: "Stop guessing. Start measuring. We translate Medicine 3.0 breakthroughs into daily protocols for biological age reversal and functional strength.",
 };
 
 export default function RootLayout({
