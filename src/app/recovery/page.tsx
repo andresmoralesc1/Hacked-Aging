@@ -12,15 +12,15 @@ export default function RecoveryPage() {
       id: 1,
       icon: <Brain className="h-6 w-6" />,
       title: "Sleep Optimization",
-      description: "El 80% de la recuperación ocurre durante el sueño. Protocolos basados en neurociencia para maximizar reparación celular.",
+      description: "80% of recovery occurs during sleep. Neuroscience-based protocols to maximize cellular repair.",
       image: "/images/recovery-therapy.jpg",
-      duration: "8 semanas",
-      difficulty: "Principiante",
-      benefits: ["Hormona de crecimiento", "Reparación celular", "Plasticidad cerebral", "Memoria"],
+      duration: "8 weeks",
+      difficulty: "Beginner",
+      benefits: ["Growth hormone", "Cellular repair", "Brain plasticity", "Memory"],
       stats: [
-        { metric: "Horas sueño profundo", improvement: "+45%" },
-        { metric: "Recuperación muscular", improvement: "+60%" },
-        { metric: "Función cognitiva", improvement: "+35%" }
+        { metric: "Deep sleep hours", improvement: "+45%" },
+        { metric: "Muscle recovery", improvement: "+60%" },
+        { metric: "Cognitive function", improvement: "+35%" }
       ],
       protocol: "sleep-optimization",
       color: "from-indigo-500 to-purple-600"
@@ -29,11 +29,11 @@ export default function RecoveryPage() {
       id: 2,
       icon: <Zap className="h-6 w-6" />,
       title: "Mitochondrial Enhancement",
-      description: "Optimiza las centrales de energía celular. Protocolos para revertir el envejecimiento mitocondrial y aumentar ATP.",
+      description: "Optimizes cellular energy centers. Protocols to reverse mitochondrial aging and increase ATP.",
       image: "/images/protocols-medical.jpg",
-      duration: "12 semanas",
-      difficulty: "Intermedio",
-      benefits: ["Energía celular", "Longevidad", "Función metabólica", "Rendimiento"],
+      duration: "12 weeks",
+      difficulty: "Intermediate",
+      benefits: ["Cellular energy", "Longevity", "Metabolic function", "Performance"],
       stats: [
         { metric: "Producción ATP", improvement: "+120%" },
         { metric: "Eficiencia mitocondrial", improvement: "+80%" },
@@ -46,15 +46,15 @@ export default function RecoveryPage() {
       id: 3,
       icon: <Heart className="h-6 w-6" />,
       title: "Inflammation Control",
-      description: "La inflamación crónica acelera el envejecimiento. Protocolos para reducir marcadores inflamatorios sistémicos.",
+      description: "Chronic inflammation accelerates aging. Protocols to reduce systemic inflammatory markers.",
       image: "/images/recovery-therapy.jpg",
-      duration: "6 semanas",
-      difficulty: "Principiante",
-      benefits: ["Salud cardiovascular", "Salud cerebral", "Articulaciones", "Sistema inmune"],
+      duration: "6 weeks",
+      difficulty: "Beginner",
+      benefits: ["Cardiovascular health", "Brain health", "Joints", "Immune system"],
       stats: [
-        { metric: "CRP inflamatorio", improvement: "-70%" },
-        { metric: "Dolor crónico", improvement: "-55%" },
-        { metric: "Energía diaria", improvement: "+40%" }
+        { metric: "Inflammatory CRP", improvement: "-70%" },
+        { metric: "Chronic pain", improvement: "-55%" },
+        { metric: "Daily energy", improvement: "+40%" }
       ],
       protocol: "inflammation-control",
       color: "from-red-500 to-orange-600"
@@ -63,15 +63,15 @@ export default function RecoveryPage() {
       id: 4,
       icon: <Shield className="h-6 w-6" />,
       title: "Hormone Reset",
-      description: "Optimización hormonal específica para mayores de 40. Restaura niveles óptimos para longevidad.",
+      description: "Specific hormone optimization for over 40. Restores optimal levels for longevity.",
       image: "/images/hormones-balance.jpg",
-      duration: "16 semanas",
-      difficulty: "Avanzado",
-      benefits: ["Vigor", "Composición corporal", "Estado de ánimo", "Libido"],
+      duration: "16 weeks",
+      difficulty: "Advanced",
+      benefits: ["Vigor", "Body composition", "Mood", "Libido"],
       stats: [
-        { metric: "Testosterona libre", improvement: "+85%" },
-        { metric: "Balance cortisol/DHEA", improvement: "+90%" },
-        { metric: "Función tiroidea", improvement: "+50%" }
+        { metric: "Free testosterone", improvement: "+85%" },
+        { metric: "Cortisol/DHEA balance", improvement: "+90%" },
+        { metric: "Thyroid function", improvement: "+50%" }
       ],
       protocol: "hormone-reset",
       color: "from-blue-500 to-cyan-600"
@@ -85,31 +85,31 @@ export default function RecoveryPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <Badge variant="secondary" className="text-sm px-4 py-2">
-              Laboratorio de Recuperación
+              Advanced Recovery Lab
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Protocolos de 
+              Advanced 
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}Recuperación Avanzada
+                {" "}Recovery Protocols
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Basado en neurociencia del sueño y metabolismo celular. 
-              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> Recupera más rápido</span>, 
-              rinde más alto y envejece más lento.
+              Based on sleep neuroscience and cellular metabolism. 
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> Recover faster</span>, 
+              perform higher and age slower.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                Basado en evidencia
+                Evidence-based
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-blue-500" />
-                6-16 semanas
+                6-16 weeks
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-purple-500" />
-                10,000+ usuarios
+                10,000+ users
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function RecoveryPage() {
                 <CardContent className="space-y-4">
                   {/* Benefits */}
                   <div>
-                    <h4 className="font-semibold text-sm mb-3">Beneficios Principales:</h4>
+                    <h4 className="font-semibold text-sm mb-3">Key Benefits:</h4>
                     <div className="flex flex-wrap gap-2">
                       {protocol.benefits.map((benefit, index) => (
                         <Badge key={index} variant="outline" className="text-xs">
@@ -187,7 +187,7 @@ export default function RecoveryPage() {
                   <div className="bg-muted/50 rounded-lg p-4 space-y-3">
                     <h4 className="font-semibold text-sm flex items-center gap-2">
                       <TrendingUp className="h-4 w-4 text-emerald-600" />
-                      Mejoras Comprobadas:
+                      Proven Improvements:
                     </h4>
                     <div className="space-y-2">
                       {protocol.stats.map((stat, index) => (
@@ -202,7 +202,7 @@ export default function RecoveryPage() {
                   {/* Action Button */}
                   <Button className={`w-full bg-gradient-to-r ${protocol.color} hover:opacity-90 transition-all duration-300 group-hover:scale-105`}>
                     <Play className="h-4 w-4 mr-2" />
-                    Comenzar Protocolo
+                    Start Protocol
                   </Button>
                 </CardContent>
               </Card>
@@ -216,18 +216,18 @@ export default function RecoveryPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">
-              Recuperación es la Clave del Rendimiento
+              Recovery is Key to Performance
             </h2>
             <p className="text-lg text-muted-foreground">
-              El 80% del progreso ocurre durante la recuperación. Nuestros protocolos 
-              están diseñados para maximizar cada minuto de descanso.
+              80% of progress occurs during recovery. Our protocols 
+              are designed to maximize every minute of rest.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Evaluación Personalizada
+                Personalized Assessment
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                Todos los Protocolos
+                All Protocols
               </Button>
             </div>
           </div>
