@@ -44,7 +44,12 @@ export default function Medicine3Approach() {
                 <img 
                   src="/images/pexels-health.jpg" 
                   alt="Health monitoring and optimization" 
+                  loading="lazy"
                   className="w-full h-48 object-cover"
+                  style={{ 
+                    contentVisibility: 'auto',
+                    containIntrinsicSize: '800px 300px'
+                  }}
                 />
                 <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
                   <p className="text-xs text-white font-medium">Real-time health tracking</p>

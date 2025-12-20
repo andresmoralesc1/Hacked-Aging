@@ -45,7 +45,12 @@ export default function HeroSection() {
                 <img 
                   src="/images/pexels-longevity.jpg" 
                   alt="Health optimization and longevity" 
+                  loading="eager"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                  style={{ 
+                    contentVisibility: 'auto',
+                    containIntrinsicSize: '400px 256px'
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
