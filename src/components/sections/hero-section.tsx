@@ -43,8 +43,8 @@ export default function HeroSection() {
               {/* Hero Image Carousel */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-fade-in group">
                 <img 
-                  src="/images/pexels-longevity.jpg" 
-                  alt="Health optimization and longevity" 
+                  src="/images/3764011.jpeg" 
+                  alt="Fit athlete ready for training - representing peak physical performance for 40+ adults" 
                   loading="eager"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
                   style={{ 
@@ -54,8 +54,8 @@ export default function HeroSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-sm font-bold drop-shadow-lg">Science-backed longevity</p>
-                  <p className="text-xs opacity-90 drop-shadow">Transform your health today</p>
+                  <p className="text-sm font-bold drop-shadow-lg">Peak Performance at Any Age</p>
+                  <p className="text-xs opacity-90 drop-shadow">Optimize your biological age today</p>
                 </div>
               </div>
               

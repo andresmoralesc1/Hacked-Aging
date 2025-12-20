@@ -24,12 +24,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
           {[
-            { href: "/", label: "Inicio", active: true },
-            { href: "/pillars", label: "4 Pilares" },
-            { href: "/recovery", label: "Recuperación" },
-            { href: "/protocols", label: "Protocolos" },
-            { href: "/research", label: "Investigación" },
-            { href: "/about", label: "Sobre Nosotros" }
+            { href: "/", label: "Home", active: true },
+            { href: "/pillars", label: "4 Pillars" },
+            { href: "/recovery", label: "Recovery" },
+            { href: "/protocols", label: "Protocols" },
+            { href: "/research", label: "Research" },
+            { href: "/about", label: "About" }
           ].map((item) => (
             <Link
               key={item.href}

@@ -28,7 +28,7 @@ export default function Footer() {
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
                 Science-backed longevity protocols translating Medicine 3.0 breakthroughs 
-                into daily actionable steps for high-performance adults over 40.
+                into actionable steps for bio-hacking adults over 40.
               </p>
               <div className="flex space-x-3 pt-2">
                 <a 
@@ -71,12 +71,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/pillars", label: "4 Pilares" },
-                { href: "/protocols", label: "Protocolos" },
-                { href: "/recovery", label: "Recuperación" },
-                { href: "/research", label: "Investigación" },
-                { href: "/blog", label: "Blog" },
-                { href: "/tools", label: "Herramientas" }
+                { href: "/pillars", label: "4 Fundamental Pillars" },
+                { href: "/protocols", label: "Validated Protocols" },
+                { href: "/recovery", label: "Recovery Lab" },
+                { href: "/research", label: "Research Database" }
               ].map((item) => (
                 <li key={item.href}>
                   <Link 
@@ -95,14 +93,14 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
               <Mail className="h-4 w-4 text-blue-600" />
-              Aprendizaje
+              Learning
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/about", label: "Sobre Nosotros" },
-                { href: "/blog", label: "Blog Científico" },
-                { href: "/assessment", label: "Evaluación Gratuita" },
-                { href: "/community", label: "Comunidad Discord" }
+                { href: "/about", label: "About Us" },
+                { href: "/blog", label: "Science Blog" },
+                { href: "/assessment", label: "Free Assessment" },
+                { href: "/community", label: "Discord Community" }
               ].map((item) => (
                 <li key={item.href}>
                   <Link 
@@ -120,14 +118,14 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
               <Heart className="h-4 w-4 text-red-500" />
-              Soporte
+              Support
             </h4>
             <ul className="space-y-3">
               {[
-                { href: "/contact", label: "Contacto Directo", icon: <Mailbox className="h-4 w-4" /> },
-                { href: "/faq", label: "Preguntas Frecuentes", icon: <Shield className="h-4 w-4" /> },
-                { href: "/consultation", label: "Consulta Personalizada", icon: <Phone className="h-4 w-4" /> },
-                { href: "/refund", label: "Política de Reembolso", icon: <Shield className="h-4 w-4" /> }
+                { href: "/contact", label: "Direct Contact", icon: <Mailbox className="h-4 w-4" /> },
+                { href: "/faq", label: "Frequently Asked Questions", icon: <Shield className="h-4 w-4" /> },
+                { href: "/consultation", label: "Personal Consultation", icon: <Phone className="h-4 w-4" /> },
+                { href: "/refund", label: "Refund Policy", icon: <Shield className="h-4 w-4" /> }
               ].map((item) => (
                 <li key={item.href}>
                   <Link 
@@ -146,29 +144,29 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
               <Mail className="h-4 w-4 text-purple-600" />
-              Newsletter Semanal
+              Weekly Newsletter
             </h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Recibe protocolos exclusivos y últimos avances en longevidad.
+              Receive exclusive protocols and the latest longevity breakthroughs.
             </p>
             <div className="space-y-3">
               <div className="relative">
                 <input
                   type="email"
-                  placeholder="tu@email.com"
+                  placeholder="your@email.com"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
                   className="w-full px-4 py-3 pr-12 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background text-sm"
                 />
                 <Button 
                   className="absolute right-1 top-1 bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 h-10 w-10 p-0 transition-all duration-300 hover-lift"
-                  aria-label="Suscribirse"
+                  aria-label="Subscribe"
                 >
                   <ExternalLink className="h-4 w-4" />
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                ✨ Unete a 25,000+ optimizadores de salud
+                ✨ Join 25,000+ health optimizers
               </p>
             </div>
           </div>
@@ -181,13 +179,13 @@ export default function Footer() {
             <div className="space-y-3">
               <h5 className="font-semibold text-foreground flex items-center gap-2 mb-3">
                 <Shield className="h-4 w-4 text-emerald-600" />
-                Aviso Médico
+                Medical Disclaimer
               </h5>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                La información proporcionada tiene <span className="font-semibold">propósitos educativos únicamente</span> 
-                y no constituye consejo médico profesional. 
-                <span className="font-medium text-foreground"> Siempre consulte</span> a su médico 
-                antes de iniciar cualquier protocolo.
+                Information provided is for <span className="font-semibold">educational purposes only</span> 
+                and does not constitute professional medical advice. 
+                <span className="font-medium text-foreground"> Always consult</span> your healthcare provider 
+                before starting any protocol.
               </p>
             </div>
 
@@ -195,13 +193,13 @@ export default function Footer() {
             <div className="space-y-3">
               <h5 className="font-semibold text-foreground flex items-center gap-2 mb-3">
                 <Heart className="h-4 w-4 text-red-500" />
-                Divulgación Afiliada
+                Affiliate Disclosure
               </h5>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Este sitio contiene enlaces de afiliados. Podemos ganar 
-                <span className="font-semibold text-foreground"> comisiones sin costo adicional</span> 
-                para usted, apoyando nuestra investigación independiente y 
-                <span className="font-medium text-emerald-600"> contenido gratuito</span>.
+                This site contains affiliate links. We may earn 
+                <span className="font-semibold text-foreground"> commissions at no additional cost</span> 
+                to you, supporting our independent research and 
+                <span className="font-medium text-emerald-600"> free content</span>.
               </p>
             </div>
 
@@ -209,13 +207,13 @@ export default function Footer() {
             <div className="space-y-3">
               <h5 className="font-semibold text-foreground flex items-center gap-2 mb-3">
                 <Phone className="h-4 w-4 text-blue-600" />
-                Contacto Rápido
+                Quick Contact
               </h5>
               <div className="space-y-2 text-xs text-muted-foreground">
-                <p className="font-medium text-foreground">📧 soporte@hackedaging.com</p>
+                <p className="font-medium text-foreground">📧 support@hackedaging.com</p>
                 <p className="font-medium text-foreground">💬 Discord: /hackedaging</p>
                 <p className="font-medium text-foreground">📺 YouTube: @hackedaging</p>
-                <p className="font-medium text-foreground">🕒 Lunes-Viernes, 9AM-6PM EST</p>
+                <p className="font-medium text-foreground">🕒 Monday-Friday, 9AM-6PM EST</p>
               </div>
             </div>
           </div>
@@ -225,18 +223,18 @@ export default function Footer() {
         <div className="border-t border-border/50 pt-6 mt-8 text-center">
           <div className="space-y-2">
             <p className="text-xs text-muted-foreground">
-              &copy; 2024 Hacked Aging. Todos los derechos reservados.
+              &copy; 2024 Hacked Aging. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground">
-              🧬 Basado en evidencia • 🔬 Investigado independientemente • 🌟 Comunidad confiable
+              🧬 Evidence-based • 🔬 Independently researched • 🌟 Trusted community
             </p>
             <div className="flex justify-center gap-4 pt-2">
               <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Privacidad
+                Privacy
               </Link>
               <span className="text-xs text-muted-foreground">•</span>
               <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Términos
+                Terms
               </Link>
               <span className="text-xs text-muted-foreground">•</span>
               <Link href="/cookies" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
