@@ -15,19 +15,19 @@ export default function PillarsPage() {
       id: 1,
       icon: <Shield className="h-8 w-8" />,
       title: "Resistance Training",
-      subtitle: "Fundación de la Longevidad",
-      description: "La masa muscular es el biomarcador más importante del envejecimiento biológico. Cada década después de los 30, perdemos 3-8% si no entrenamos.",
+      subtitle: "Foundation of Longevity",
+      description: "Muscle mass is the most important biomarker of biological aging. Every decade after 30, we lose 3-8% if we don't train.",
       image: "/images/pillars-strength.jpg",
       benefits: [
-        "Previene la sarcopenia",
-        "Mejora la sensibilidad a la insulina", 
-        "Aumenta la densidad ósea",
-        "Optimiza hormonas anabólicas"
+        "Prevents sarcopenia",
+        "Improves insulin sensitivity", 
+        "Increases bone density",
+        "Optimizes anabolic hormones"
       ],
       stats: [
-        { label: "Longevidad +7 años", value: "Meta-análisis 2023" },
-        { label: "Reducción de mortalidad", value: "-23%" },
-        { label: "Calidad de vida", value: "+40%" }
+        { label: "Longevity +7 years", value: "2023 Meta-analysis" },
+        { label: "Mortality reduction", value: "-23%" },
+        { label: "Quality of life", value: "+40%" }
       ],
       color: "from-blue-500 to-indigo-600"
     },
@@ -35,14 +35,14 @@ export default function PillarsPage() {
       id: 2,
       icon: <Zap className="h-8 w-8" />,
       title: "Metabolic Health",
-      subtitle: "Energía Celular Optimizada",
-      description: "El metabolismo celular determina tu edad biológica. Los protocols correctos pueden reducir tu edad metabólica en 10-15 años.",
+      subtitle: "Optimized Cellular Energy",
+      description: "Cellular metabolism determines your biological age. The right protocols can reduce your metabolic age by 10-15 years.",
       image: "/images/hormones-balance.jpg",
       benefits: [
-        "Optimiza mitocondrias",
-        "Reduce edad metabólica",
-        "Mejora sensibilidad a la insulina",
-        "Aumenta energía celular"
+        "Optimizes mitochondria",
+        "Reduces metabolic age",
+        "Improves insulin sensitivity",
+        "Increases cellular energy"
       ],
       stats: [
         { label: "Mitochondrial efficiency", value: "+22%" },
@@ -55,19 +55,19 @@ export default function PillarsPage() {
       id: 3,
       icon: <Heart className="h-8 w-8" />,
       title: "Hormonal Balance",
-      subtitle: "Regulación Endocrina Precisa",
-      description: "Las hormonas son los mensajeros químicos del envejecimiento. El balance óptimo retrasa el envejecimiento biológico.",
+      subtitle: "Precise Endocrine Regulation",
+      description: "Hormones are the chemical messengers of aging. Optimal balance delays biological aging.",
       image: "/images/hormones-balance.jpg",
       benefits: [
-        "Optimiza testosterona/libido",
-        "Equilibra cortisol/DHEA",
-        "Mejora función tiroidea",
-        "Regula estrógenos/progesterona"
+        "Optimizes testosterone/libido",
+        "Balances cortisol/DHEA",
+        "Improves thyroid function",
+        "Regulates estrogen/progesterone"
       ],
       stats: [
-        { label: "Vigor sexual", value: "+60%" },
-        { label: "Manejo del estrés", value: "+45%" },
-        { label: "Sueño profundo", value: "+35%" }
+        { label: "Sexual vigor", value: "+60%" },
+        { label: "Stress management", value: "+45%" },
+        { label: "Deep sleep", value: "+35%" }
       ],
       color: "from-purple-500 to-pink-600"
     },
@@ -75,19 +75,19 @@ export default function PillarsPage() {
       id: 4,
       icon: <Brain className="h-8 w-8" />,
       title: "Advanced Recovery",
-      subtitle: "Regeneración Acelerada",
-      description: "La recuperación determina los resultados. El 80% del progreso ocurre durante el sueño y descanso.",
+      subtitle: "Accelerated Regeneration",
+      description: "Recovery determines results. 80% of progress occurs during sleep and rest.",
       image: "/images/recovery-therapy.jpg",
       benefits: [
-        "Optimiza sueño profundo",
-        "Acelera recuperación muscular",
-        "Reduce inflamación crónica",
-        "Mejora plasticidad cerebral"
+        "Optimizes deep sleep",
+        "Accelerates muscle recovery",
+        "Reduces chronic inflammation",
+        "Improves brain plasticity"
       ],
       stats: [
-        { label: "Calidad del sueño", value: "+55%" },
-        { label: "Recuperación", value: "+40%" },
-        { label: "Función cognitiva", value: "+30%" }
+        { label: "Sleep quality", value: "+55%" },
+        { label: "Recovery", value: "+40%" },
+        { label: "Cognitive function", value: "+30%" }
       ],
       color: "from-orange-500 to-red-600"
     }
@@ -100,18 +100,18 @@ export default function PillarsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <Badge variant="secondary" className="text-sm px-4 py-2">
-              Fundamentos Científicos
+              Scientific Foundations
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Los 4 Pilares de la 
+              The 4 Pillars of 
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}Longevidad Óptima
+                {" "}Optimal Longevity
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Basado en 10,000+ estudios revisados por pares. Estos son los únicos 4 pilares que 
-              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> realmente importan </span>
-              para revertir tu edad biológica después de los 40.
+              Based on 10,000+ peer-reviewed studies. These are the only 4 pillars that 
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> really matter </span>
+              to reverse your biological age after 40.
             </p>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function PillarsPage() {
                   {/* Badge */}
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-white/90 backdrop-blur-sm text-xs font-medium">
-                      Pilar {pillar.id}
+                      Pillar {pillar.id}
                     </Badge>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export default function PillarsPage() {
                       <div>
                         <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
                           <Award className="h-5 w-5 text-emerald-600" />
-                          Beneficios Comprobados
+                          Proven Benefits
                         </h4>
                         <div className="grid gap-2">
                           {pillar.benefits.map((benefit, index) => (
@@ -204,7 +204,7 @@ export default function PillarsPage() {
                       <div className="bg-muted/50 rounded-lg p-4">
                         <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
                           <TrendingUp className="h-5 w-5 text-blue-600" />
-                          Resultados Comprobados
+                          Proven Results
                         </h4>
                         <div className="grid gap-3">
                           {pillar.stats.map((stat, index) => (
@@ -229,18 +229,18 @@ export default function PillarsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">
-              Comienza tu Transformación Hoy
+              Start Your Transformation Today
             </h2>
             <p className="text-lg text-muted-foreground">
-              Cada día que esperas, tu edad biológica avanza. Comienza con el pilar más importante 
-              para tu situación actual y avanza paso a paso.
+              Every day you wait, your biological age advances. Start with the most important pillar 
+              for your current situation and advance step by step.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Iniciar Evaluación Gratuita
+                Start Free Assessment
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                Ver Protocolos
+                View Protocols
               </Button>
             </div>
           </div>
