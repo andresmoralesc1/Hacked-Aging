@@ -5,52 +5,71 @@ import { Heart, TrendingUp, Users, Target } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <Badge variant="secondary" className="w-fit">
+    <section className="min-h-[80vh] flex items-center py-12 md:py-16 lg:py-20 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="space-y-6 max-w-4xl animate-slide-in-left">
+            <div className="space-y-4">
+              <Badge variant="secondary" className="text-sm px-4 py-2 animate-fade-in-up">
                 Trusted Health Information
               </Badge>
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-              Hacked Aging:{" "}
-              <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                Science-Backed Longevity for High-Performance 40+
-              </span>
-            </h1>
-            <p className="text-gray-500 md:text-xl dark:text-gray-400">
-              Stop guessing. Start measuring. We translate Medicine 3.0 breakthroughs 
-              into daily protocols for biological age reversal and functional strength.
-            </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight animate-fade-in-up animation-delay-200">
+                Hacked Aging:{" "}
+                <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent block lg:inline">
+                  Science-Backed Longevity for High-Performance 40+
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl animate-fade-in-up animation-delay-400">
+                Stop guessing. Start measuring. We translate Medicine 3.0 breakthroughs 
+                into daily protocols for biological age reversal and functional strength.
+              </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in-up animation-delay-600">
+              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Start Your Protocol
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105">
                 Free Assessment
               </Button>
             </div>
-            <div className="mt-6 p-4 bg-emerald-50 dark:bg-emerald-950/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
-              <p className="text-sm text-emerald-800 dark:text-emerald-200 font-medium">
-                🎥 As featured in our YouTube community of <span className="font-bold">25,000+</span> health optimizers
+            <div className="mt-8 p-6 bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-950/30 dark:to-blue-950/30 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-sm animate-fade-in-up animation-delay-800 hover:shadow-md transition-all duration-300">
+              <p className="text-base text-emerald-800 dark:text-emerald-200 font-medium">
+                🎥 As featured in our YouTube community of <span className="font-bold text-lg">25,000+</span> health optimizers
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="grid gap-4">
-              <Card className="w-full max-w-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Heart className="h-5 w-5 text-red-500" />
+          <div className="flex justify-center lg:justify-end items-center animate-slide-in-right">
+            <div className="w-full max-w-md space-y-6">
+              {/* Hero Image Carousel */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-fade-in group">
+                <img 
+                  src="/images/pexels-longevity.jpg" 
+                  alt="Health optimization and longevity" 
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="text-sm font-bold drop-shadow-lg">Science-backed longevity</p>
+                  <p className="text-xs opacity-90 drop-shadow">Transform your health today</p>
+                </div>
+              </div>
+              
+              {/* Health Tip Card */}
+              <Card className="shadow-xl hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 hover:scale-105 animate-fade-in animation-delay-200">
+                <CardHeader className="pb-4">
+                  <CardTitle className="flex items-center gap-3 text-xl">
+                    <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors duration-300">
+                      <Heart className="h-6 w-6 text-red-500 animate-pulse-slow" />
+                    </div>
                     Today's Health Tip
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm">
-                    Today's Protocol: 4-minute Zone 2 cardio session + 10g collagen peptide. 
-                    This combination has been shown to improve mitochondrial efficiency by 22%.
+                <CardContent className="pt-0">
+                  <p className="text-base leading-relaxed">
+                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">Today's Protocol:</span> 4-minute Zone 2 cardio session + 10g collagen peptide. 
+                    <br className="hidden sm:block" />
+                    This combination has been shown to improve mitochondrial efficiency by 
+                    <span className="font-bold text-lg text-blue-600 dark:text-blue-400 mx-1 hover:scale-110 inline-block transition-transform duration-300">22%</span>
                   </p>
                 </CardContent>
               </Card>
