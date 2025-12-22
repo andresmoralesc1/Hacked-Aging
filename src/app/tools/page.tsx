@@ -21,9 +21,9 @@ interface Tool {
 const tools: Tool[] = [
   {
     id: "1",
-    category: "Recuperación",
-    title: "Sauna Infrarrojo de Espectro Completo",
-    benefit: "Detoxificación y salud cardiovascular",
+    category: "Recovery",
+    title: "Full Spectrum Infrared Sauna",
+    benefit: "Detoxification and cardiovascular health",
     price: "$299+",
     rating: 4.8,
     affiliateLink: "#",
@@ -33,8 +33,8 @@ const tools: Tool[] = [
   {
     id: "2",
     category: "Biohacking",
-    title: "Esteras de PEMF (Campo Electromagnético)",
-    benefit: "Recuperación celular y alivio del dolor articular",
+    title: "PEMF Mats (Pulsed Electromagnetic Field)",
+    benefit: "Cellular recovery and joint pain relief",
     price: "$199+",
     rating: 4.6,
     affiliateLink: "#",
@@ -42,19 +42,19 @@ const tools: Tool[] = [
   },
   {
     id: "3",
-    category: "Monitorización",
-    title: "Monitor Continuo de Glucosa (CGM)",
-    benefit: "Visibilidad en tiempo real de tu salud metabólica",
-    price: "$99/mes",
+    category: "Monitoring",
+    title: "Continuous Glucose Monitor (CGM)",
+    benefit: "Real-time visibility into your metabolic health",
+    price: "$99/month",
     rating: 4.9,
     affiliateLink: "#",
     icon: <Shield className="h-5 w-5" />
   },
   {
     id: "4",
-    category: "Longevidad",
-    title: "Paneles de Terapia de Luz Roja",
-    benefit: "Mejora la producción de ATP y la salud mitocondrial",
+    category: "Longevity",
+    title: "Red Light Therapy Panels",
+    benefit: "Improves ATP production and mitochondrial health",
     price: "$399+",
     rating: 4.7,
     affiliateLink: "#",
@@ -62,9 +62,9 @@ const tools: Tool[] = [
   },
   {
     id: "5",
-    category: "Suplementación",
-    title: "Precursores de NAD+ y Creatina",
-    benefit: "Energía celular y mantenimiento de la fuerza",
+    category: "Supplementation",
+    title: "NAD+ Precursors and Creatine",
+    benefit: "Cellular energy and strength maintenance",
     price: "$49-89",
     rating: 4.5,
     affiliateLink: "#",
@@ -79,13 +79,13 @@ export default function ToolsPage() {
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 py-12 md:py-24">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4">
-            <Badge variant="secondary" className="mb-4">Laboratorio Probado</Badge>
+            <Badge variant="secondary" className="mb-4">Lab Tested</Badge>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
-              El Laboratorio de Longevidad
+              The Longevity Lab
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Herramientas que Utilizamos y Recomendamos. 
-              Cada producto ha sido evaluado científicamente y probado por nuestro equipo.
+              Tools We Use and Recommend. 
+              Every product has been scientifically evaluated and tested by our team.
             </p>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function ToolsPage() {
                       <Badge variant="default">{tool.category}</Badge>
                       <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
                         <Star className="h-3 w-3 mr-1" />
-                        Herramienta Destacada
+                        Featured Tool
                       </Badge>
                     </div>
                     <CardTitle className="text-2xl text-primary">{tool.title}</CardTitle>
@@ -120,18 +120,18 @@ export default function ToolsPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  <span className="font-semibold text-foreground">Beneficio Clave:</span> {tool.benefit}
+                   <span className="font-semibold text-foreground">Key Benefit:</span> {tool.benefit}
                 </p>
                 
                 <div className="bg-muted/50 rounded-lg p-4">
                   <h4 className="font-semibold mb-2 flex items-center gap-2">
                     {tool.icon}
-                    Nuestra Evaluación
+                     Our Evaluation
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Después de 6 meses de testing con más de 50 participantes de nuestra comunidad, 
-                    esta herramienta demostró mejoras significativas en marcadores de recuperación 
-                    y bienestar general. Los resultados del estudio están disponibles para miembros.
+                     After 6 months of testing with over 50 participants from our community, 
+                     this tool demonstrated significant improvements in recovery markers 
+                     and overall well-being. Study results are available to members.
                   </p>
                 </div>
                 
@@ -139,12 +139,12 @@ export default function ToolsPage() {
                   <Button size="lg" className="flex-1" asChild>
                     <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4 mr-2" />
-                      Ver Análisis Completo
+                       View Full Analysis
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
                     <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
-                      Comprar con Descuento
+                       Buy with Discount
                     </a>
                   </Button>
                 </div>
@@ -154,7 +154,7 @@ export default function ToolsPage() {
 
           {/* Regular Tools Grid */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-center">Todas las Herramientas Recomendadas</h2>
+            <h2 className="text-2xl font-bold text-center">All Recommended Tools</h2>
             
             <div className="grid gap-6 md:grid-cols-2">
               {tools.filter(tool => !tool.featured).map((tool) => (
@@ -178,18 +178,18 @@ export default function ToolsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-medium">Beneficio:</span> {tool.benefit}
+                      <span className="font-medium">Benefit:</span> {tool.benefit}
                     </p>
                     
                     <div className="flex gap-2">
                       <Button size="sm" variant="outline" className="flex-1" asChild>
                         <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
-                          Ver Análisis
+                          View Analysis
                         </a>
                       </Button>
                       <Button size="sm" asChild>
                         <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
-                          Comprar
+                          Buy
                         </a>
                       </Button>
                     </div>
@@ -206,20 +206,20 @@ export default function ToolsPage() {
         <div className="container px-4 md:px-6">
           <Card className="max-w-4xl mx-auto border-0">
             <CardHeader className="text-center">
-              <CardTitle className="text-xl">Transparencia y Ética</CardTitle>
+              <CardTitle className="text-xl">Transparency and Ethics</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Como participante en el Programa de Asociados de Amazon y otros programas, 
-                ganamos comisiones por compras calificadas. Sin embargo, nuestras recomendaciones 
-                nunca están influenciadas por comisiones potenciales.
+                As an Amazon Associate and other program participant, 
+                we earn commissions on qualifying purchases. However, our recommendations 
+                are never influenced by potential commissions.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Solo recomendamos productos que hemos probado extensivamente o que cuentan con 
-                sólida evidencia científica que respalda su uso para la longevidad y salud después de los 40.
+                We only recommend products we have extensively tested or that have 
+                solid scientific evidence supporting their use for longevity and health after 40.
               </p>
               <Badge variant="secondary" className="mx-auto">
-                100% Independiente • Basado en Evidencia • Probado por la Comunidad
+                100% Independent • Evidence-Based • Community Tested
               </Badge>
             </CardContent>
           </Card>

@@ -14,11 +14,11 @@ export default function ProtocolsPage() {
       title: "Zone 2 Cardio Foundation",
       description: "The foundation of healthy metabolism. 8-week protocol to build aerobic capacity and mitochondrial health.",
       image: "/images/protocols-medical.jpg",
-      duration: "8 semanas",
+      duration: "8 weeks",
       level: "Foundational",
       category: "Cardio",
       equipment: ["Stationary bike", "Heart rate monitor"],
-      frequency: "4-5 días/semana",
+      frequency: "4-5 days/week",
       benefits: ["Longevity", "Cardiovascular health", "Recovery", "Energy"],
       protocol: "zone2-foundation",
       stats: [
@@ -34,7 +34,7 @@ export default function ProtocolsPage() {
       title: "Muscle Building 40+",
       description: "Intelligent muscle building after 40. Sarcopenia prevention and hormonal optimization.",
       image: "/images/pillars-strength.jpg",
-      duration: "12 semanas",
+      duration: "12 weeks",
       level: "Intermediate",
       category: "Strength",
       equipment: ["Free weights", "Resistance bands", "Machines"],
@@ -52,19 +52,19 @@ export default function ProtocolsPage() {
       id: 3,
       icon: <Calendar className="h-6 w-6" />,
       title: "Sleep Optimization Protocol",
-      description: "Maximiza las 5 fases del sueño para optimizar hormonas de crecimiento y recuperación celular.",
+      description: "Maximize the 5 phases of sleep to optimize growth hormones and cellular recovery.",
       image: "/images/recovery-therapy.jpg",
-      duration: "6 semanas",
-      level: "Todos",
-      category: "Recuperación",
-      equipment: ["Monitor de sueño", "Suplementación específica"],
+      duration: "6 weeks",
+      level: "All levels",
+      category: "Recovery",
+      equipment: ["Sleep monitor", "Targeted supplementation"],
       frequency: "Diario",
-      benefits: ["Recuperación", "Hormonas", "Cognición", "Energía"],
+      benefits: ["Recovery", "Hormones", "Cognition", "Energy"],
       protocol: "sleep-optimization",
       stats: [
-        { metric: "Sueño profundo", improvement: "+55%" },
-        { metric: "GH nocturna", improvement: "+40%" },
-        { metric: "Función cognitiva", improvement: "+30%" }
+        { metric: "Deep sleep", improvement: "+55%" },
+        { metric: "Nightly GH", improvement: "+40%" },
+        { metric: "Cognitive function", improvement: "+30%" }
       ],
       color: "from-purple-500 to-pink-600"
     },
@@ -72,19 +72,19 @@ export default function ProtocolsPage() {
       id: 4,
       icon: <Zap className="h-6 w-6" />,
       title: "Metabolic Reset",
-      description: "Resetea tu metabolismo en 30 días. Protocolo intensivo para sensibilización a la insulina y flexibilidad metabólica.",
+      description: "Reset your metabolism in 30 days. Intensive protocol for insulin sensitivity and metabolic flexibility.",
       image: "/images/hormones-balance.jpg",
-      duration: "30 días",
-      level: "Avanzado",
-      category: "Metabolismo",
-      equipment: ["Glucómetro", "Cinta métrica", "App de seguimiento"],
+      duration: "30 days",
+      level: "Advanced",
+      category: "Metabolism",
+      equipment: ["Glucose meter", "Measuring tape", "Tracking app"],
       frequency: "Diario",
-      benefits: ["Peso", "Energía", "Claridad mental", "Longevidad"],
+      benefits: ["Weight", "Energy", "Mental clarity", "Longevity"],
       protocol: "metabolic-reset",
       stats: [
-        { metric: "Sensibilidad insulina", improvement: "+70%" },
-        { metric: "Flexibilidad metabólica", improvement: "+85%" },
-        { metric: "Grasa visceral", improvement: "-25%" }
+        { metric: "Insulin sensitivity", improvement: "+70%" },
+        { metric: "Metabolic flexibility", improvement: "+85%" },
+        { metric: "Visceral fat", improvement: "-25%" }
       ],
       color: "from-orange-500 to-red-600"
     }
@@ -97,31 +97,31 @@ export default function ProtocolsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <Badge variant="secondary" className="text-sm px-4 py-2">
-              Protocolos Validados
+              Evidence-Based Protocols
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Protocolos de 
+              Medicine 3.0 
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                {" "}Medicina 3.0
+                {" "}Protocols
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Protocolos probados en 5,000+ usuarios. 
-              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> Resultados medibles</span> 
-              con datos reales de biomarcadores.
+              Protocols tested on 5,000+ users. 
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400"> Measurable results</span> 
+              with real biomarker data.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                Basado en evidencia
+                Evidence-based
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-blue-500" />
-                5,000+ usuarios
+                5,000+ users
               </div>
               <div className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-purple-500" />
-                Estudios científicos
+                Scientific studies
               </div>
             </div>
           </div>
@@ -133,19 +133,19 @@ export default function ProtocolsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             <Badge variant="outline" className="px-4 py-2 hover:bg-muted transition-colors cursor-pointer">
-              Todos (4)
+              All (4)
             </Badge>
             <Badge variant="outline" className="px-4 py-2 hover:bg-muted transition-colors cursor-pointer">
               Cardio (1)
             </Badge>
             <Badge variant="outline" className="px-4 py-2 hover:bg-muted transition-colors cursor-pointer">
-              Fuerza (1)
+              Strength (1)
             </Badge>
             <Badge variant="outline" className="px-4 py-2 hover:bg-muted transition-colors cursor-pointer">
-              Recuperación (1)
+              Recovery (1)
             </Badge>
             <Badge variant="outline" className="px-4 py-2 hover:bg-muted transition-colors cursor-pointer">
-              Metabolismo (1)
+              Metabolism (1)
             </Badge>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function ProtocolsPage() {
                 <CardContent className="space-y-4">
                   {/* Equipment */}
                   <div>
-                    <h4 className="font-semibold text-sm mb-2">Equipamiento Necesario:</h4>
+                    <h4 className="font-semibold text-sm mb-2">Required Equipment:</h4>
                     <div className="flex flex-wrap gap-2">
                       {protocol.equipment.map((item, index) => (
                         <Badge key={index} variant="outline" className="text-xs">
@@ -232,7 +232,7 @@ export default function ProtocolsPage() {
 
                   {/* Benefits */}
                   <div>
-                    <h4 className="font-semibold text-sm mb-2">Beneficios:</h4>
+                    <h4 className="font-semibold text-sm mb-2">Benefits:</h4>
                     <div className="flex flex-wrap gap-2">
                       {protocol.benefits.map((benefit, index) => (
                         <Badge key={index} className="text-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200">
@@ -246,7 +246,7 @@ export default function ProtocolsPage() {
                   <div className="bg-muted/50 rounded-lg p-3 space-y-2">
                     <h4 className="font-semibold text-sm flex items-center gap-2">
                       <Target className="h-4 w-4 text-emerald-600" />
-                      Resultados Típicos:
+                       Typical Results:
                     </h4>
                     <div className="grid grid-cols-3 gap-2 text-xs">
                       {protocol.stats.map((stat, index) => (
@@ -261,7 +261,7 @@ export default function ProtocolsPage() {
                   {/* Action Button */}
                   <Button className={`w-full bg-gradient-to-r ${protocol.color} hover:opacity-90 transition-all duration-300 group-hover:scale-105`}>
                     <Play className="h-4 w-4 mr-2" />
-                    Iniciar Protocolo
+                    Start Protocol
                   </Button>
                 </CardContent>
               </Card>
@@ -275,18 +275,18 @@ export default function ProtocolsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">
-              Protocolos Personalizados para Ti
+              Personalized Protocols for You
             </h2>
             <p className="text-lg text-muted-foreground">
-              Cada persona es única. Obtén una evaluación gratuita y protocolos personalizados 
-              basados en tus biomarcadores y objetivos específicos.
+              Every person is unique. Get a free assessment and personalized protocols 
+              based on your biomarkers and specific goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Evaluación Gratuita
+                Free Assessment
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                Ver Todos los Protocolos
+                View All Protocols
               </Button>
             </div>
           </div>

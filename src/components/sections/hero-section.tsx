@@ -5,7 +5,7 @@ import { Heart, TrendingUp, Users, Target } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[70vh] flex items-center py-8 md:py-12 lg:py-16 relative overflow-hidden">
+    <section className="min-h-[60vh] flex items-center py-6 md:py-8 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="space-y-4 max-w-4xl animate-slide-in-left">
