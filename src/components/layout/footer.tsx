@@ -123,7 +123,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/contact", label: "Direct Contact", icon: <Mailbox className="h-4 w-4" /> },
-                { href: "/team", label: "Meet the Team", icon: <Shield className="h-4 w-4" /> },
+                { href: "/about", label: "About Us", icon: <Shield className="h-4 w-4" /> },
                 { href: "/assessment", label: "Free Assessment", icon: <Phone className="h-4 w-4" /> },
                 { href: "/protocols", label: "View Protocols", icon: <Shield className="h-4 w-4" /> }
               ].map((item) => (
