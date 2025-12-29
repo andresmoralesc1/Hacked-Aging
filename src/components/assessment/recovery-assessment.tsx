@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle, Circle, Activity, Heart, Brain, Users, TrendingUp } from 'lucide-react';
+import { CheckCircle, Circle, Battery, Heart, Moon, Utensils } from 'lucide-react';
 import EmailCollection from "@/components/assessment/email-collection";
 
 interface Question {
@@ -18,103 +18,91 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    category: "Exercise",
-    question: "How often do you engage in moderate exercise (walking, cycling, etc)?",
+    category: "Sleep Quality",
+    question: "How refreshed do you feel when you wake up?",
     options: [
-      { text: "Rarely or never", score: 0 },
-      { text: "1-2 times per week", score: 2 },
-      { text: "3-4 times per week", score: 4 },
-      { text: "5+ times per week", score: 5 }
+      { text: "Exhausted, struggle to get out of bed", score: 0 },
+      { text: "Somewhat tired, need coffee immediately", score: 2 },
+      { text: "Fairly refreshed, ready within 30 min", score: 4 },
+      { text: "Fully energized and ready to start the day", score: 5 }
     ],
-    icon: <Activity className="h-5 w-5" />
+    icon: <Moon className="h-5 w-5" />
   },
   {
     id: 2,
-    category: "Exercise", 
-    question: "Do you include strength training in your routine?",
+    category: "Physical Recovery",
+    question: "How long does it take you to recover from intense exercise?",
     options: [
-      { text: "Never", score: 0 },
-      { text: "Occasionally (1-2x/month)", score: 1 },
-      { text: "Regularly (1-2x/week)", score: 3 },
-      { text: "Very regularly (3+x/week)", score: 5 }
+      { text: "3+ days, significant soreness", score: 0 },
+      { text: "2-3 days, moderate soreness", score: 2 },
+      { text: "1-2 days, mild soreness", score: 4 },
+      { text: "Less than 24 hours, minimal soreness", score: 5 }
     ],
-    icon: <Activity className="h-5 w-5" />
+    icon: <Battery className="h-5 w-5" />
   },
   {
     id: 3,
-    category: "Nutrition",
-    question: "How would you describe your typical diet?",
+    category: "Physical Recovery",
+    question: "Do you experience muscle or joint pain regularly?",
     options: [
-      { text: "Mostly processed foods", score: 0 },
-      { text: "Mixed diet, some healthy choices", score: 2 },
-      { text: "Mostly whole foods", score: 4 },
-      { text: "Primarily plant-based, whole foods", score: 5 }
+      { text: "Yes, daily chronic pain", score: 0 },
+      { text: "Frequently, several times per week", score: 1 },
+      { text: "Occasionally, mild discomfort", score: 3 },
+      { text: "Rarely or never", score: 5 }
+    ],
+    icon: <Battery className="h-5 w-5" />
+  },
+  {
+    id: 4,
+    category: "Mental Recovery",
+    question: "How quickly can you bounce back from stressful events?",
+    options: [
+      { text: "Takes days to weeks", score: 0 },
+      { text: "Takes 1-2 days", score: 2 },
+      { text: "Within a few hours", score: 4 },
+      { text: "Almost immediately", score: 5 }
     ],
     icon: <Heart className="h-5 w-5" />
   },
   {
-    id: 4,
-    category: "Sleep",
-    question: "How many hours of quality sleep do you get per night?",
-    options: [
-      { text: "Less than 6 hours", score: 0 },
-      { text: "6-7 hours", score: 2 },
-      { text: "7-8 hours", score: 4 },
-      { text: "8+ hours consistently", score: 5 }
-    ],
-    icon: <Brain className="h-5 w-5" />
-  },
-  {
     id: 5,
-    category: "Sleep",
-    question: "How consistent is your sleep schedule?",
+    category: "Mental Recovery",
+    question: "How often do you take mental breaks during the day?",
     options: [
-      { text: "Very irregular", score: 0 },
-      { text: "Somewhat consistent", score: 2 },
-      { text: "Mostly consistent", score: 4 },
-      { text: "Very consistent (same bedtime/wake time)", score: 5 }
+      { text: "Never, constant work/stress", score: 0 },
+      { text: "Rarely, only when forced", score: 1 },
+      { text: "Sometimes, a few short breaks", score: 3 },
+      { text: "Regularly, scheduled breaks throughout", score: 5 }
     ],
-    icon: <Brain className="h-5 w-5" />
+    icon: <Heart className="h-5 w-5" />
   },
   {
     id: 6,
-    category: "Social",
-    question: "How often do you have meaningful social interactions?",
+    category: "Nutrition",
+    question: "Do you prioritize protein intake after exercise?",
     options: [
-      { text: "Rarely", score: 0 },
-      { text: "Occasionally", score: 2 },
-      { text: "Regularly", score: 4 },
-      { text: "Daily", score: 5 }
+      { text: "Never think about it", score: 0 },
+      { text: "Sometimes, inconsistent", score: 2 },
+      { text: "Usually, within a few hours", score: 4 },
+      { text: "Always, within 30-60 minutes", score: 5 }
     ],
-    icon: <Users className="h-5 w-5" />
+    icon: <Utensils className="h-5 w-5" />
   },
   {
     id: 7,
-    category: "Stress",
-    question: "How would you rate your current stress level?",
-    options: [
-      { text: "Very high stress", score: 0 },
-      { text: "Moderate stress", score: 2 },
-      { text: "Low stress", score: 4 },
-      { text: "Very low stress", score: 5 }
-    ],
-    icon: <Brain className="h-5 w-5" />
-  },
-  {
-    id: 8,
-    category: "Stress",
-    question: "Do you practice stress management techniques?",
+    category: "Sleep Quality",
+    question: "Do you use recovery techniques (stretching, foam rolling, ice baths)?",
     options: [
       { text: "Never", score: 0 },
-      { text: "Rarely", score: 1 },
-      { text: "Sometimes", score: 3 },
-      { text: "Regularly", score: 5 }
+      { text: "Rarely, only when in pain", score: 1 },
+      { text: "Sometimes, 1-2x per week", score: 3 },
+      { text: "Regularly, part of my routine", score: 5 }
     ],
-    icon: <Brain className="h-5 w-5" />
+    icon: <Moon className="h-5 w-5" />
   }
 ];
 
-export default function LongevityAssessment() {
+export default function RecoveryAssessment() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showEmailCollection, setShowEmailCollection] = useState(false);
@@ -141,14 +129,14 @@ export default function LongevityAssessment() {
   const calculateScores = () => {
     const categoryScores: { [key: string]: number } = {};
     const categoryTotals: { [key: string]: number } = {};
-    
+
     questions.forEach((q, index) => {
       if (!categoryScores[q.category]) {
         categoryScores[q.category] = 0;
         categoryTotals[q.category] = 0;
       }
       categoryScores[q.category] += answers[index];
-      categoryTotals[q.category] += 5; // Max score per question
+      categoryTotals[q.category] += 5;
     });
 
     const percentages: { [key: string]: number } = {};
@@ -167,28 +155,25 @@ export default function LongevityAssessment() {
 
   const getRecommendations = (scores: { [key: string]: number }) => {
     const recommendations = [];
-    
-    if (scores.Exercise < 60) {
-      recommendations.push("Consider starting with our Zone 2 Cardio Foundation protocol");
+
+    if (scores["Sleep Quality"] < 60) {
+      recommendations.push("Focus on sleep consistency and quality for better recovery");
     }
-    if (scores.Nutrition < 60) {
-      recommendations.push("Focus on whole foods and consider our nutrition guidelines");
+    if (scores["Physical Recovery"] < 60) {
+      recommendations.push("Incorporate active recovery days and stretching into your routine");
     }
-    if (scores.Sleep < 60) {
-      recommendations.push("Prioritize sleep consistency for better recovery");
+    if (scores["Mental Recovery"] < 60) {
+      recommendations.push("Practice stress management and schedule regular mental breaks");
     }
-    if (scores.Social < 60) {
-      recommendations.push("Build regular social connections for mental health");
-    }
-    if (scores.Stress < 60) {
-      recommendations.push("Implement stress management techniques daily");
+    if (scores["Nutrition"] < 60) {
+      recommendations.push("Optimize post-workout nutrition with adequate protein intake");
     }
 
     return recommendations;
   };
 
   if (showEmailCollection) {
-    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Longevity Score" />;
+    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Recovery Assessment" />;
   }
 
   if (showResults) {
@@ -200,16 +185,16 @@ export default function LongevityAssessment() {
       <div className="max-w-4xl mx-auto p-6">
         <Card className="mb-8">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold">Your Longevity Score</CardTitle>
+            <CardTitle className="text-3xl font-bold">Your Recovery Score</CardTitle>
             <CardDescription>Personalized assessment results</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="text-center mb-8">
               <div className="text-6xl font-bold text-primary mb-2">{totalScore}%</div>
-              <div className="text-xl text-gray-600">
-                {totalScore >= 80 ? "Excellent!" : 
-                 totalScore >= 60 ? "Good Progress!" : 
-                 totalScore >= 40 ? "Room for Improvement" : "Needs Attention"}
+              <div className="text-xl text-gray-600 dark:text-gray-300">
+                {totalScore >= 80 ? "Excellent Recovery!" :
+                 totalScore >= 60 ? "Good Recovery Capacity" :
+                 totalScore >= 40 ? "Needs Improvement" : "Requires Attention"}
               </div>
             </div>
 
@@ -246,7 +231,7 @@ export default function LongevityAssessment() {
             )}
 
             <div className="mt-8 text-center">
-              <Button 
+              <Button
                 onClick={() => window.location.href = "/protocols"}
                 className="mr-4"
               >

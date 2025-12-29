@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle, Circle, Activity, Heart, Brain, Users, TrendingUp } from 'lucide-react';
+import { CheckCircle, Circle, Moon, Clock, Thermometer, Sun } from 'lucide-react';
 import EmailCollection from "@/components/assessment/email-collection";
 
 interface Question {
@@ -18,103 +18,79 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    category: "Exercise",
-    question: "How often do you engage in moderate exercise (walking, cycling, etc)?",
+    category: "Duration",
+    question: "How many hours of sleep do you typically get per night?",
     options: [
-      { text: "Rarely or never", score: 0 },
-      { text: "1-2 times per week", score: 2 },
-      { text: "3-4 times per week", score: 4 },
-      { text: "5+ times per week", score: 5 }
+      { text: "Less than 5 hours", score: 0 },
+      { text: "5-6 hours", score: 2 },
+      { text: "7-8 hours", score: 5 },
+      { text: "More than 9 hours", score: 3 }
     ],
-    icon: <Activity className="h-5 w-5" />
+    icon: <Moon className="h-5 w-5" />
   },
   {
     id: 2,
-    category: "Exercise", 
-    question: "Do you include strength training in your routine?",
+    category: "Consistency",
+    question: "How consistent is your sleep schedule (same bedtime/wake time)?",
     options: [
-      { text: "Never", score: 0 },
-      { text: "Occasionally (1-2x/month)", score: 1 },
-      { text: "Regularly (1-2x/week)", score: 3 },
-      { text: "Very regularly (3+x/week)", score: 5 }
+      { text: "Very irregular, varies by 2+ hours", score: 0 },
+      { text: "Somewhat inconsistent, varies by 1-2 hours", score: 2 },
+      { text: "Mostly consistent, varies by 30-60 min", score: 4 },
+      { text: "Very consistent, within 30 minutes", score: 5 }
     ],
-    icon: <Activity className="h-5 w-5" />
+    icon: <Clock className="h-5 w-5" />
   },
   {
     id: 3,
-    category: "Nutrition",
-    question: "How would you describe your typical diet?",
+    category: "Quality",
+    question: "How long does it take you to fall asleep?",
     options: [
-      { text: "Mostly processed foods", score: 0 },
-      { text: "Mixed diet, some healthy choices", score: 2 },
-      { text: "Mostly whole foods", score: 4 },
-      { text: "Primarily plant-based, whole foods", score: 5 }
+      { text: "More than 30 minutes", score: 0 },
+      { text: "20-30 minutes", score: 2 },
+      { text: "10-20 minutes", score: 4 },
+      { text: "Less than 10 minutes", score: 5 }
     ],
-    icon: <Heart className="h-5 w-5" />
+    icon: <Moon className="h-5 w-5" />
   },
   {
     id: 4,
-    category: "Sleep",
-    question: "How many hours of quality sleep do you get per night?",
+    category: "Quality",
+    question: "How often do you wake up during the night?",
     options: [
-      { text: "Less than 6 hours", score: 0 },
-      { text: "6-7 hours", score: 2 },
-      { text: "7-8 hours", score: 4 },
-      { text: "8+ hours consistently", score: 5 }
+      { text: "Many times, hard to fall back asleep", score: 0 },
+      { text: "Several times, takes a while to sleep again", score: 2 },
+      { text: "Once or twice, fall back asleep quickly", score: 4 },
+      { text: "Rarely or never", score: 5 }
     ],
-    icon: <Brain className="h-5 w-5" />
+    icon: <Moon className="h-5 w-5" />
   },
   {
     id: 5,
-    category: "Sleep",
-    question: "How consistent is your sleep schedule?",
+    category: "Environment",
+    question: "How would you rate your sleep environment?",
     options: [
-      { text: "Very irregular", score: 0 },
-      { text: "Somewhat consistent", score: 2 },
-      { text: "Mostly consistent", score: 4 },
-      { text: "Very consistent (same bedtime/wake time)", score: 5 }
+      { text: "Noisy, bright, uncomfortable", score: 0 },
+      { text: "Some noise/light, decent comfort", score: 2 },
+      { text: "Quiet, dark, comfortable", score: 4 },
+      { text: "Optimized (blackout, cool, quiet, comfortable)", score: 5 }
     ],
-    icon: <Brain className="h-5 w-5" />
+    icon: <Thermometer className="h-5 w-5" />
   },
   {
     id: 6,
-    category: "Social",
-    question: "How often do you have meaningful social interactions?",
+    category: "Environment",
+    question: "Do you use screens (phone, TV, computer) before bed?",
     options: [
-      { text: "Rarely", score: 0 },
-      { text: "Occasionally", score: 2 },
-      { text: "Regularly", score: 4 },
-      { text: "Daily", score: 5 }
+      { text: "Yes, right until I try to sleep", score: 0 },
+      { text: "Yes, but stop 15-30 min before bed", score: 2 },
+      { text: "Rarely, stop 30-60 min before bed", score: 4 },
+      { text: "Never, stop 1+ hours before bed", score: 5 }
     ],
-    icon: <Users className="h-5 w-5" />
-  },
-  {
-    id: 7,
-    category: "Stress",
-    question: "How would you rate your current stress level?",
-    options: [
-      { text: "Very high stress", score: 0 },
-      { text: "Moderate stress", score: 2 },
-      { text: "Low stress", score: 4 },
-      { text: "Very low stress", score: 5 }
-    ],
-    icon: <Brain className="h-5 w-5" />
-  },
-  {
-    id: 8,
-    category: "Stress",
-    question: "Do you practice stress management techniques?",
-    options: [
-      { text: "Never", score: 0 },
-      { text: "Rarely", score: 1 },
-      { text: "Sometimes", score: 3 },
-      { text: "Regularly", score: 5 }
-    ],
-    icon: <Brain className="h-5 w-5" />
+    icon: <Sun className="h-5 w-5" />
   }
 ];
 
-export default function LongevityAssessment() {
+export default function SleepAssessment() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showEmailCollection, setShowEmailCollection] = useState(false);
@@ -141,14 +117,14 @@ export default function LongevityAssessment() {
   const calculateScores = () => {
     const categoryScores: { [key: string]: number } = {};
     const categoryTotals: { [key: string]: number } = {};
-    
+
     questions.forEach((q, index) => {
       if (!categoryScores[q.category]) {
         categoryScores[q.category] = 0;
         categoryTotals[q.category] = 0;
       }
       categoryScores[q.category] += answers[index];
-      categoryTotals[q.category] += 5; // Max score per question
+      categoryTotals[q.category] += 5;
     });
 
     const percentages: { [key: string]: number } = {};
@@ -167,28 +143,25 @@ export default function LongevityAssessment() {
 
   const getRecommendations = (scores: { [key: string]: number }) => {
     const recommendations = [];
-    
-    if (scores.Exercise < 60) {
-      recommendations.push("Consider starting with our Zone 2 Cardio Foundation protocol");
+
+    if (scores["Duration"] < 60) {
+      recommendations.push("Aim for 7-8 hours of sleep per night for optimal health");
     }
-    if (scores.Nutrition < 60) {
-      recommendations.push("Focus on whole foods and consider our nutrition guidelines");
+    if (scores["Consistency"] < 60) {
+      recommendations.push("Establish a consistent sleep schedule, even on weekends");
     }
-    if (scores.Sleep < 60) {
-      recommendations.push("Prioritize sleep consistency for better recovery");
+    if (scores["Quality"] < 60) {
+      recommendations.push("Improve sleep quality with relaxation techniques before bed");
     }
-    if (scores.Social < 60) {
-      recommendations.push("Build regular social connections for mental health");
-    }
-    if (scores.Stress < 60) {
-      recommendations.push("Implement stress management techniques daily");
+    if (scores["Environment"] < 60) {
+      recommendations.push("Optimize your sleep environment: dark, cool (65-68°F), and quiet");
     }
 
     return recommendations;
   };
 
   if (showEmailCollection) {
-    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Longevity Score" />;
+    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Sleep Quality" />;
   }
 
   if (showResults) {
@@ -200,16 +173,16 @@ export default function LongevityAssessment() {
       <div className="max-w-4xl mx-auto p-6">
         <Card className="mb-8">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold">Your Longevity Score</CardTitle>
+            <CardTitle className="text-3xl font-bold">Your Sleep Score</CardTitle>
             <CardDescription>Personalized assessment results</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="text-center mb-8">
               <div className="text-6xl font-bold text-primary mb-2">{totalScore}%</div>
-              <div className="text-xl text-gray-600">
-                {totalScore >= 80 ? "Excellent!" : 
-                 totalScore >= 60 ? "Good Progress!" : 
-                 totalScore >= 40 ? "Room for Improvement" : "Needs Attention"}
+              <div className="text-xl text-gray-600 dark:text-gray-300">
+                {totalScore >= 80 ? "Excellent Sleep Hygiene!" :
+                 totalScore >= 60 ? "Good Sleep Patterns" :
+                 totalScore >= 40 ? "Needs Improvement" : "Requires Immediate Attention"}
               </div>
             </div>
 
@@ -246,7 +219,7 @@ export default function LongevityAssessment() {
             )}
 
             <div className="mt-8 text-center">
-              <Button 
+              <Button
                 onClick={() => window.location.href = "/protocols"}
                 className="mr-4"
               >
@@ -279,7 +252,7 @@ export default function LongevityAssessment() {
       <Card>
         <CardHeader>
           <div className="flex justify-between items-center mb-4">
-            <span className="text-sm text-gray-500">Question {currentQuestion + 1} of {questions.length}</span>
+            <span className="text-sm text-gray-500 dark:text-gray-400">Question {currentQuestion + 1} of {questions.length}</span>
             <span className="text-sm font-medium capitalize">{question.category}</span>
           </div>
           <Progress value={progress} className="h-2 mb-4" />
