@@ -3,10 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { WebVitals } from "@/components/web-vitals";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap", // Prevent FOIT (Flash of Invisible Text)
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -63,7 +66,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Prefetch critical routes */}
+        <link rel="prefetch" href="/assessment" />
+        <link rel="prefetch" href="/protocols" />
+
+        {/* Viewport optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+        {/* Theme color for mobile browsers */}
+        <meta name="theme-color" content="#10b981" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <WebVitals />
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">

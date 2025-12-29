@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Activity, Heart, Brain, Utensils, Battery, Clock } from "lucide-react";
@@ -60,6 +61,17 @@ const assessments = [
 ];
 
 export default function AssessmentPage() {
+  // Prefetch assessment routes for faster navigation
+  useEffect(() => {
+    const routes = ['/assessment/longevity', '/assessment/recovery', '/assessment/sleep', '/assessment/nutrition', '/assessment/stress'];
+    routes.forEach(route => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = route;
+      document.head.appendChild(link);
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-12 md:py-24">
