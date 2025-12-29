@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, TrendingUp, Users, Target } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -25,12 +26,16 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 pt-1 animate-fade-in-up animation-delay-600">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                Start Your Protocol
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105">
-                Free Assessment
-              </Button>
+              <a href="/assessment" aria-label="Start your personalized health assessment">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Start Your Assessment
+                </Button>
+              </a>
+              <a href="/assessment" aria-label="Take the free health assessment">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
+                  Free Health Assessment
+                </Button>
+              </a>
             </div>
             <div className="mt-6 p-5 bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-950/30 dark:to-blue-950/30 rounded-xl border border-emerald-200 dark:border-emerald-800 shadow-sm animate-fade-in-up animation-delay-800 hover:shadow-md transition-all duration-300">
               <p className="text-base text-emerald-800 dark:text-emerald-200 font-medium">
@@ -41,19 +46,17 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end items-center animate-slide-in-right">
             <div className="w-full max-w-md space-y-4">
               {/* Hero Image Carousel */}
-              <div className="relative rounded-xl overflow-hidden shadow-xl animate-fade-in group">
-                <img 
-                  src="/images/3764011.jpeg" 
-                  alt="Fit athlete ready for training - representing peak physical performance for 40+ adults" 
-                  loading="eager"
-                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
-                  style={{ 
-                    contentVisibility: 'auto',
-                    containIntrinsicSize: '400px 256px'
-                  }}
+              <div className="relative rounded-xl overflow-hidden shadow-xl animate-fade-in group h-56">
+                <Image
+                  src="/images/3764011.jpeg"
+                  alt="Fit athlete ready for training - representing peak physical performance for 40+ adults"
+                  fill
+                  priority
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-3 left-3 right-3 text-white">
+                <div className="absolute bottom-3 left-3 right-3 text-white z-10">
                   <p className="text-sm font-bold drop-shadow-lg">Peak Performance at Any Age</p>
                   <p className="text-xs opacity-90 drop-shadow">Optimize your biological age today</p>
                 </div>

@@ -45,12 +45,16 @@ export default function Navbar() {
           
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="hover:bg-gray-100 dark:hover:bg-gray-800">
-              Free Assessment
-            </Button>
-            <Button size="sm" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 shadow-md hover:shadow-lg transition-all duration-200">
-              Join Community
-            </Button>
+            <Link href="/assessment" aria-label="Take the free health assessment">
+              <Button variant="ghost" size="sm" className="hover:bg-gray-100 dark:hover:bg-gray-800">
+                Free Assessment
+              </Button>
+            </Link>
+            <a href="https://www.youtube.com/@hackedaging" target="_blank" rel="noopener noreferrer" aria-label="Join our YouTube community">
+              <Button size="sm" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 shadow-md hover:shadow-lg transition-all duration-200">
+                Join Community
+              </Button>
+            </a>
           </div>
           
           {/* Mobile Menu Button */}
@@ -89,12 +93,16 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200 dark:border-gray-800">
-                <Button variant="ghost" size="lg" className="justify-start hover:bg-gray-100 dark:hover:bg-gray-800">
-                  Free Assessment
-                </Button>
-                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 shadow-md">
-                  Join Community
-                </Button>
+                <Link href="/assessment" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" size="lg" className="justify-start hover:bg-gray-100 dark:hover:bg-gray-800 w-full">
+                    Free Assessment
+                  </Button>
+                </Link>
+                <a href="https://www.youtube.com/@hackedaging" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                  <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 shadow-md w-full">
+                    Join Community
+                  </Button>
+                </a>
               </div>
             </nav>
           </div>

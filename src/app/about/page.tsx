@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Target, Database, Award, Brain, Heart, BookOpen, Microscope } from "lucide-react";
+import { Users, Target, Database, Award, Brain, Heart, BookOpen, Microscope, Linkedin } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -100,6 +100,17 @@ export default function About() {
             <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-6">
               Copy Editor and Writer at American Cancer Society | Johns Hopkins PhD
             </p>
+            <div className="flex justify-center gap-4 mb-6">
+              <a
+                href="https://www.linkedin.com/in/taliahenkle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                <Linkedin className="h-5 w-5" />
+                View LinkedIn Profile
+              </a>
+            </div>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
 

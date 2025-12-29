@@ -11,7 +11,7 @@ export default function ResearchPage() {
     {
       id: 1,
       title: "Biomarkers of Biological Age: A Comprehensive Review",
-      authors: ["Dr. Talia Chen, PhD", "M. Rodriguez", "J. Smith"],
+      authors: ["Dr. Talia Henkle, PhD", "M. Rodriguez", "J. Smith"],
       journal: "Nature Aging",
       year: "2024",
       impact: "15.2",
@@ -68,7 +68,7 @@ export default function ResearchPage() {
     {
       id: 4,
       title: "Sleep Architecture and Longevity: Longitudinal Study",
-      authors: ["R. Johnson", "Dr. Talia Chen, PhD"],
+      authors: ["R. Johnson", "Dr. Talia Henkle, PhD"],
       journal: "Nature Communications",
       year: "2023",
       impact: "16.8",
