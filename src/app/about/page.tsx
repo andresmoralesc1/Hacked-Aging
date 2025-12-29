@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Quote, Target, Lightbulb, Heart, Award, TrendingUp } from "lucide-react";
+import { Linkedin, Brain, Code, Users, Lightbulb, Award, Briefcase, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -67,308 +67,310 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      <div className="min-h-screen">
-        {/* Hero Section - Centered */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-          <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25"></div>
-
-          <div className="container relative px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <Badge variant="secondary" className="text-sm px-6 py-2">
-                Our Story
-              </Badge>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                Where <span className="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">AI Innovation</span> Meets Medical Excellence
-              </h1>
-
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Making cutting-edge longevity science accessible to everyone who wants to live healthier, longer.
-              </p>
-            </div>
+      <div className="min-h-screen bg-gradient-to-b from-background to-gray-50/50 dark:to-gray-900/50">
+        <div className="container mx-auto px-4 py-12 md:py-24">
+          {/* Hero Section */}
+          <div className="text-center mb-16 mt-8">
+            <Badge variant="secondary" className="text-sm px-4 py-2 mb-6">
+              Meet the Founders
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              The Team Behind Hacked Aging
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+              Where AI innovation meets medical science expertise
+            </p>
+            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
-        </section>
 
-        {/* Mission Statement - Centered */}
-        <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto">
-              <div className="relative">
-                <Quote className="absolute -top-4 -left-4 h-12 w-12 text-blue-600/20" />
-                <div className="relative z-10 pl-8">
-                  <p className="text-2xl md:text-3xl font-light leading-relaxed text-foreground/90 italic">
-                    Born from a <strong className="font-semibold text-emerald-600">decade-long friendship</strong>, Hacked Aging transforms Medicine 3.0 research into practical protocols for biological age reversal.
-                  </p>
-                  <div className="mt-8 flex items-center gap-4">
-                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent dark:via-slate-700"></div>
-                    <Lightbulb className="h-5 w-5 text-emerald-600" />
-                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent dark:via-slate-700"></div>
+          {/* Origin Story */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <Card className="border-blue-200 dark:border-blue-800 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-blue-900 dark:text-blue-100 flex items-center gap-2">
+                  <Lightbulb className="h-6 w-6" />
+                  Our Story
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <strong>Hacked Aging was born from a decade-long friendship</strong> between Andrés Morales,
+                  an AI automation expert, and Dr. Talia Henkle, a Johns Hopkins-trained scientist specializing
+                  in cancer and immunology research.
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Andrés envisioned a platform that could make cutting-edge longevity science accessible to everyone—not
+                  just academics and biohackers. He partnered with Talia, whose deep expertise in medical research and
+                  science communication at the American Cancer Society, made her the perfect co-founder to translate
+                  complex Medicine 3.0 concepts into actionable protocols.
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Together, they combine <strong>AI-powered automation</strong> with <strong>peer-reviewed medical science</strong>
+                  to create a longevity platform that's both evidence-based and accessible.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Founders Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            {/* Dr. Talia Henkle */}
+            <Card className="border-emerald-200 dark:border-emerald-800 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <CardHeader className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 pb-6">
+                {/* Profile Photo */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden ring-4 ring-emerald-200 dark:ring-emerald-700 shadow-lg">
+                    <Image
+                      src="/images/talia-henkle.jpeg"
+                      alt="Dr. Talia Henkle, PhD - Co-Founder & CSO of Hacked Aging"
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                      priority
+                    />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Our Approach - Centered 3 Pillars */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Combining artificial intelligence, peer-reviewed science, and real-world testing.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                <Card className="border-none shadow-lg hover:shadow-xl transition-all">
-                  <CardContent className="pt-8 pb-8 text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                      <Target className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Data-Driven</h3>
-                    <p className="text-muted-foreground">
-                      Every protocol backed by peer-reviewed research and real biomarker testing.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-none shadow-lg hover:shadow-xl transition-all">
-                  <CardContent className="pt-8 pb-8 text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-                      <TrendingUp className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold">AI-Powered</h3>
-                    <p className="text-muted-foreground">
-                      Leveraging automation to personalize protocols for your unique biology.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-none shadow-lg hover:shadow-xl transition-all">
-                  <CardContent className="pt-8 pb-8 text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                      <Heart className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Human-Centered</h3>
-                    <p className="text-muted-foreground">
-                      Designed for real people with busy lives, not just biohackers.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Meet the Founders - Centered */}
-        <section className="py-16 md:py-24 bg-white dark:bg-slate-950">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet the Founders</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  A unique partnership of technology and medical science.
-                </p>
-              </div>
-
-              {/* Founder 1: Andrés */}
-              <div className="mb-20">
-                <Card className="border-none shadow-xl overflow-hidden">
-                  <div className="grid lg:grid-cols-[300px_1fr] gap-0">
-                    {/* Photo Column */}
-                    <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 flex items-center justify-center p-12">
-                      <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-white dark:ring-slate-800 shadow-2xl">
-                        <Image
-                          src="/images/andres-morales.jpeg"
-                          alt="Andrés Morales - Co-Founder & CTO"
-                          fill
-                          className="object-cover"
-                          sizes="192px"
-                          priority
-                        />
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-3 bg-emerald-100 dark:bg-emerald-900/50 rounded-xl">
+                        <Brain className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                       </div>
-                    </div>
-
-                    {/* Content Column */}
-                    <CardContent className="p-8 md:p-12">
-                      <div className="flex items-start justify-between mb-6">
-                        <div>
-                          <h3 className="text-3xl font-bold mb-2">Andrés Morales</h3>
-                          <p className="text-blue-600 dark:text-blue-400 font-medium text-lg">
-                            Co-Founder & Chief Technology Officer
-                          </p>
-                        </div>
-                        <a
-                          href="https://linkedin.com/in/andresmoralesc1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all hover:scale-105 shadow-md text-sm"
-                        >
-                          <Linkedin className="h-4 w-4" />
-                          LinkedIn
-                        </a>
-                      </div>
-
-                      <div className="space-y-4 mb-6">
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                          Fractional AI consultant and automation leader with <strong>10+ years</strong> transforming businesses through intelligent systems. After building expertise in B2B sales and executive search, Andrés founded <strong>Neural Flow</strong> in 2022, pioneering AI-powered automation solutions for global enterprises.
-                        </p>
-                        <p className="text-muted-foreground">
-                          His journey began in commercial real estate and talent acquisition, where he identified inefficiencies that technology could solve. This led him to master AI automation platforms like <strong>N8N</strong>, <strong>Make</strong>, and advanced <strong>LLM integration</strong>, building systems that have processed millions in revenue for clients worldwide.
-                        </p>
-                        <p className="text-muted-foreground">
-                          When his close friend Talia shared cutting-edge longevity research from Johns Hopkins, Andrés saw an opportunity to democratize access to Medicine 3.0. He envisioned using AI to translate complex scientific protocols into personalized, actionable plans for everyday people—not just elite biohackers.
+                      <div>
+                        <CardTitle className="text-2xl text-emerald-900 dark:text-emerald-100">
+                          Dr. Talia Henkle, PhD
+                        </CardTitle>
+                        <p className="text-sm text-emerald-700 dark:text-emerald-300 font-medium">
+                          Co-Founder & Chief Science Officer
                         </p>
                       </div>
-
-                      <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                        <div>
-                          <h4 className="font-semibold text-sm text-muted-foreground mb-3">EXPERTISE</h4>
-                          <ul className="space-y-1.5 text-sm">
-                            <li>• AI Automation & LLMs (ChatGPT, Claude)</li>
-                            <li>• Full-Stack Development (Next.js, React)</li>
-                            <li>• UX/UI Design & Prototyping</li>
-                            <li>• Business Strategy & Digital Transformation</li>
-                            <li>• WordPress & CRM Systems</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-sm text-muted-foreground mb-3">CAREER HIGHLIGHTS</h4>
-                          <ul className="space-y-1.5 text-sm">
-                            <li>📍 Bogotá, Colombia</li>
-                            <li>🚀 Founder, Neural Flow (2022-Present)</li>
-                            <li>💼 10+ years B2B Sales & Tech Consulting</li>
-                            <li>🌎 Serving clients across 15+ countries</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-                        <p className="text-sm text-muted-foreground italic">
-                          "I envisioned a platform making longevity science accessible to everyone—not just biohackers. AI automation can personalize Medicine 3.0 for the masses."
-                        </p>
-                      </div>
-                    </CardContent>
+                    </div>
                   </div>
-                </Card>
-              </div>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/talia-henkle-phd-10453b15b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-md text-sm mt-4"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  View LinkedIn Profile
+                </a>
+              </CardHeader>
 
-              {/* Founder 2: Dr. Talia */}
-              <div>
-                <Card className="border-none shadow-xl overflow-hidden">
-                  <div className="grid lg:grid-cols-[300px_1fr] gap-0">
-                    {/* Photo Column */}
-                    <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 flex items-center justify-center p-12 lg:order-2">
-                      <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-white dark:ring-slate-800 shadow-2xl">
-                        <Image
-                          src="/images/talia-henkle.jpeg"
-                          alt="Dr. Talia Henkle - Co-Founder & CSO"
-                          fill
-                          className="object-cover"
-                          sizes="192px"
-                          priority
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content Column */}
-                    <CardContent className="p-8 md:p-12 lg:order-1">
-                      <div className="flex items-start justify-between mb-6">
-                        <div>
-                          <h3 className="text-3xl font-bold mb-2">Dr. Talia Henkle, PhD</h3>
-                          <p className="text-emerald-600 dark:text-emerald-400 font-medium text-lg">
-                            Co-Founder & Chief Science Officer
-                          </p>
-                        </div>
-                        <a
-                          href="https://www.linkedin.com/in/talia-henkle-phd-10453b15b/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-all hover:scale-105 shadow-md text-sm"
-                        >
-                          <Linkedin className="h-4 w-4" />
-                          LinkedIn
-                        </a>
-                      </div>
-
-                      <div className="space-y-4 mb-6">
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                          Johns Hopkins-trained immunologist and medical writer with <strong>60M+ website views</strong> at the American Cancer Society. Her PhD research focused on viral immunology and vaccine development, contributing to breakthroughs in understanding how the immune system responds to pathogens.
-                        </p>
-                        <p className="text-muted-foreground">
-                          After earning her doctorate from Johns Hopkins School of Medicine (2016-2021), Talia joined the <strong>American Cancer Society</strong> as Copy Editor and Science Writer, where she transformed complex oncology and immunology research into content that empowers millions of patients and families making critical health decisions.
-                        </p>
-                        <p className="text-muted-foreground">
-                          Her passion for science communication earned her the <strong>AIBS Emerging Public Policy Leader Award</strong> in 2021, recognizing her work bridging scientific research and public understanding. When Andrés proposed applying her expertise to longevity science, she saw an opportunity to help people not just fight disease, but optimize their healthspan through evidence-based Medicine 3.0 protocols.
-                        </p>
-                      </div>
-
-                      <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                        <div>
-                          <h4 className="font-semibold text-sm text-muted-foreground mb-3">EXPERTISE</h4>
-                          <ul className="space-y-1.5 text-sm">
-                            <li>• Cancer & Immunology Research</li>
-                            <li>• Viral Immunology & Vaccines</li>
-                            <li>• Medical Writing & Editing</li>
-                            <li>• Science Communication</li>
-                            <li>• Peer-Reviewed Publication Analysis</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-sm text-muted-foreground mb-3">EDUCATION & HONORS</h4>
-                          <ul className="space-y-1.5 text-sm">
-                            <li>🎓 PhD Immunology, Johns Hopkins (2016-2021)</li>
-                            <li>🎓 BS Biology, University of Kentucky (2011-2014)</li>
-                            <li>🏆 AIBS Public Policy Leader Award (2021)</li>
-                            <li>📍 Washington DC-Baltimore Area</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-                        <p className="text-sm text-muted-foreground italic">
-                          "After years of cancer research, I'm passionate about helping people prevent disease before it starts—using the same rigorous science we apply in immunology."
-                        </p>
-                      </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section - Centered */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto">
-              <Card className="border-none bg-gradient-to-br from-blue-600 to-emerald-600 text-white shadow-2xl">
-                <CardContent className="p-12 text-center space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold">
-                    Ready to Optimize Your Longevity?
-                  </h3>
-                  <p className="text-xl text-blue-50">
-                    Join 25,000+ health optimizers getting personalized protocols based on real science.
+              <CardContent className="pt-6 space-y-6">
+                {/* Summary */}
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-emerald-600" />
+                    About
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Science writer and medical content expert with <strong>60M+ website views</strong> at
+                    the American Cancer Society. Johns Hopkins PhD specializing in cancer, immunology,
+                    and virology research.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                    <a href="/assessment">
-                      <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 shadow-xl hover:shadow-2xl">
-                        Take Free Assessment
-                      </Button>
-                    </a>
-                    <a href="/protocols">
-                      <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-8">
-                        View Protocols
-                      </Button>
-                    </a>
+                </div>
+
+                {/* Current Role */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <Briefcase className="h-4 w-4 text-purple-600" />
+                    Current Position
+                  </h4>
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      <strong>American Cancer Society</strong> - Copy Editor & Writer
+                    </p>
+                    <p className="text-xs text-gray-500">2023 - Present | Medical Content</p>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+
+                {/* Expertise */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Expertise:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Cancer Research</Badge>
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Immunology</Badge>
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Virology</Badge>
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Vaccines</Badge>
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Medical Writing</Badge>
+                    <Badge variant="outline" className="bg-emerald-50 dark:bg-emerald-950/30">Science Communication</Badge>
+                  </div>
+                </div>
+
+                {/* Education */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4 text-green-600" />
+                    Education
+                  </h4>
+                  <div className="space-y-2">
+                    <div>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                        PhD in Immunology
+                      </p>
+                      <p className="text-xs text-gray-500">Johns Hopkins University School of Medicine (2016-2021)</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                        BS in Biology
+                      </p>
+                      <p className="text-xs text-gray-500">University of Kentucky (2011-2014)</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Awards */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <Award className="h-4 w-4 text-yellow-600" />
+                    Recognition
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    🏆 AIBS Emerging Public Policy Leader Award (2021)
+                  </p>
+                </div>
+
+                {/* Location */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2">Location:</h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    📍 Washington DC-Baltimore Area
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Andrés Morales */}
+            <Card className="border-blue-200 dark:border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <CardHeader className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 pb-6">
+                {/* Profile Photo */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden ring-4 ring-blue-200 dark:ring-blue-700 shadow-lg">
+                    <Image
+                      src="/images/andres-morales.jpeg"
+                      alt="Andrés Morales - Co-Founder & CTO of Hacked Aging"
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
+                        <Code className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl text-blue-900 dark:text-blue-100">
+                          Andrés Morales
+                        </CardTitle>
+                        <p className="text-sm text-blue-700 dark:text-blue-300 font-medium">
+                          Co-Founder & Chief Technology Officer
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="https://linkedin.com/in/andresmoralesc1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-md text-sm mt-4"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  View LinkedIn Profile
+                </a>
+              </CardHeader>
+
+              <CardContent className="pt-6 space-y-6">
+                {/* Summary */}
+                <div>
+                  <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-blue-600" />
+                    About
+                  </h4>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Fractional AI consultant and automation leader with <strong>10+ years of experience</strong> in
+                    B2B sales, executive search, and digital strategy. Founder of <strong>Neural Flow</strong>,
+                    specializing in AI-powered systems for businesses worldwide.
+                  </p>
+                </div>
+
+                {/* Current Role */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <Briefcase className="h-4 w-4 text-purple-600" />
+                    Current Position
+                  </h4>
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      <strong>Neural Flow</strong> - AI & Web Developer
+                    </p>
+                    <p className="text-xs text-gray-500">June 2022 - Present | Worldwide</p>
+                  </div>
+                </div>
+
+                {/* Expertise */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Expertise:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">AI Automation</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">ChatGPT & LLMs</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">N8N & Make</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">UX Design</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">Next.js</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">WordPress</Badge>
+                    <Badge variant="outline" className="bg-blue-50 dark:bg-blue-950/30">Business Strategy</Badge>
+                  </div>
+                </div>
+
+                {/* Education */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4 text-green-600" />
+                    Education
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    Liceo de Ciencia y Cultura Harvard
+                  </p>
+                  <p className="text-xs text-gray-500">High School Diploma (2003-2009)</p>
+                </div>
+
+                {/* Location */}
+                <div>
+                  <h4 className="font-semibold text-sm mb-2">Location:</h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    📍 Bogotá, Colombia
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </section>
+
+          {/* CTA Section */}
+          <div className="mt-16 text-center">
+            <Card className="max-w-2xl mx-auto bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-blue-950/30 dark:to-emerald-950/30 border-blue-200 dark:border-blue-800">
+              <CardContent className="pt-6 pb-6">
+                <h3 className="text-2xl font-bold mb-4">Ready to Optimize Your Longevity?</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  Start with our free assessment and get personalized protocols based on your biomarkers.
+                </p>
+                <a href="/assessment">
+                  <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700">
+                    Take Free Assessment
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </>
   );
