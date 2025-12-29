@@ -79,53 +79,66 @@ export default function AssessmentPage() {
         </motion.div>
 
         {/* Assessment Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {assessments.map((assessment, index) => (
             <motion.div
               key={assessment.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.1, duration: 0.6, type: "spring" }}
+              whileHover={{ y: -8 }}
             >
-              <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${assessment.gradient} flex items-center justify-center text-white mb-4`}>
-                    {assessment.icon}
-                  </div>
-                  <CardTitle className="text-2xl mb-2">{assessment.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {assessment.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  <div className="mb-4">
-                    <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        <span>{assessment.duration}</span>
+              <Link href={`/assessment/${assessment.id}`} className="block h-full">
+                <Card className="h-full flex flex-col hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/20 overflow-hidden group cursor-pointer">
+                  <div className={`h-1.5 bg-gradient-to-r ${assessment.gradient}`} />
+                  <CardHeader className="pb-4">
+                    <motion.div
+                      whileHover={{ rotate: 5, scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${assessment.gradient} flex items-center justify-center text-white mb-4 shadow-lg`}
+                    >
+                      {assessment.icon}
+                    </motion.div>
+                    <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
+                      {assessment.title}
+                    </CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      {assessment.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col justify-between pt-0">
+                    <div className="mb-6">
+                      <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                            <Clock className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                          </div>
+                          <span className="font-medium">{assessment.duration}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                            <span className="text-sm font-bold text-emerald-600 dark:text-emerald-400">{assessment.questions}</span>
+                          </div>
+                          <span className="font-medium">questions</span>
+                        </div>
                       </div>
-                      <div>
-                        <span>{assessment.questions} questions</span>
+                      <div className="flex flex-wrap gap-2">
+                        {assessment.categories.map((cat) => (
+                          <span
+                            key={cat}
+                            className="px-3 py-1.5 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg border border-gray-200 dark:border-gray-600"
+                          >
+                            {cat}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {assessment.categories.map((cat) => (
-                        <span
-                          key={cat}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
-                        >
-                          {cat}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <Link href={`/assessment/${assessment.id}`} className="w-full">
-                    <Button className="w-full">
-                      Start Assessment
+                    <Button className={`w-full h-12 font-semibold bg-gradient-to-r ${assessment.gradient} hover:opacity-90 transition-all shadow-md group-hover:shadow-lg`}>
+                      Start Assessment →
                     </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -135,42 +148,82 @@ export default function AssessmentPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-16 max-w-3xl mx-auto"
+          className="mt-20 max-w-5xl mx-auto"
         >
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4 text-center">How It Works</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-xl font-bold text-blue-600 dark:text-blue-300">1</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Choose Assessment</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Select the health area you want to evaluate
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-xl font-bold text-emerald-600 dark:text-emerald-300">2</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Answer Questions</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Complete the quick questionnaire honestly
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-xl font-bold text-purple-600 dark:text-purple-300">3</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Get Results</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Receive personalized recommendations via email
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-3">How It Works</h2>
+            <p className="text-gray-600 dark:text-gray-400">Simple, fast, and science-backed</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: 1,
+                title: "Choose Assessment",
+                description: "Select the health area you want to evaluate from our evidence-based assessments",
+                gradient: "from-blue-500 to-blue-600",
+                bgColor: "bg-blue-100 dark:bg-blue-900/30"
+              },
+              {
+                step: 2,
+                title: "Answer Questions",
+                description: "Complete the quick questionnaire honestly - keyboard shortcuts available for speed",
+                gradient: "from-emerald-500 to-emerald-600",
+                bgColor: "bg-emerald-100 dark:bg-emerald-900/30"
+              },
+              {
+                step: 3,
+                title: "Get Results",
+                description: "Receive personalized recommendations and track your progress over time",
+                gradient: "from-purple-500 to-purple-600",
+                bgColor: "bg-purple-100 dark:bg-purple-900/30"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+              >
+                <Card className="h-full border-2 hover:border-primary/20 transition-all hover:shadow-lg">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                      <span className="text-2xl font-bold text-white">{item.step}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Additional Features */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0 }}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {[
+              { icon: "⚡", label: "3-5 minutes" },
+              { icon: "🔒", label: "100% Private" },
+              { icon: "🎯", label: "Personalized" },
+              { icon: "📊", label: "Track Progress" }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1 + index * 0.05 }}
+                className="text-center p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+              >
+                <div className="text-2xl mb-2">{feature.icon}</div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{feature.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </div>

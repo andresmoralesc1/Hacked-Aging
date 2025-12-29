@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle, Circle, Activity, Heart, Brain, Users, TrendingUp } from 'lucide-react';
+import { Circle, Activity, Heart, Brain, Users } from 'lucide-react';
 import EmailCollection from "@/components/assessment/email-collection";
+import AssessmentResults from "@/components/assessment/assessment-results";
 
 interface Question {
   id: number;
@@ -121,6 +123,27 @@ export default function LongevityAssessment() {
   const [showResults, setShowResults] = useState(false);
   const [userEmail, setUserEmail] = useState('');
 
+  // Keyboard navigation
+  React.useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (showResults || showEmailCollection) return;
+
+      if (e.key >= '1' && e.key <= '4') {
+        const optionIndex = parseInt(e.key) - 1;
+        const question = questions[currentQuestion];
+        if (question.options[optionIndex]) {
+          handleAnswer(question.options[optionIndex].score);
+        }
+      } else if (e.key === 'Backspace' && currentQuestion > 0) {
+        e.preventDefault();
+        handleBack();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [currentQuestion, showResults, showEmailCollection]);
+
   const handleAnswer = (score: number) => {
     const newAnswers = [...answers, score];
     setAnswers(newAnswers);
@@ -129,6 +152,13 @@ export default function LongevityAssessment() {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowEmailCollection(true);
+    }
+  };
+
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+      setAnswers(answers.slice(0, -1));
     }
   };
 
@@ -188,7 +218,7 @@ export default function LongevityAssessment() {
   };
 
   if (showEmailCollection) {
-    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Longevity Score" />;
+    return <EmailCollection onSubmit={handleEmailSubmit} assessmentTitle="Longevity Score" gradient="from-blue-500 to-emerald-500" />;
   }
 
   if (showResults) {
@@ -197,77 +227,20 @@ export default function LongevityAssessment() {
     const recommendations = getRecommendations(scores);
 
     return (
-      <div className="max-w-4xl mx-auto p-6">
-        <Card className="mb-8">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold">Your Longevity Score</CardTitle>
-            <CardDescription>Personalized assessment results</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-center mb-8">
-              <div className="text-6xl font-bold text-primary mb-2">{totalScore}%</div>
-              <div className="text-xl text-gray-600">
-                {totalScore >= 80 ? "Excellent!" : 
-                 totalScore >= 60 ? "Good Progress!" : 
-                 totalScore >= 40 ? "Room for Improvement" : "Needs Attention"}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {Object.entries(scores).map(([category, score]) => (
-                <Card key={category}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium capitalize">{category}</span>
-                      <span className="text-sm font-bold">{score}%</span>
-                    </div>
-                    <Progress value={score} className="h-2" />
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {recommendations.length > 0 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl">Recommendations</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {recommendations.map((rec, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span>{rec}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-
-            <div className="mt-8 text-center">
-              <Button 
-                onClick={() => window.location.href = "/protocols"}
-                className="mr-4"
-              >
-                View Protocols
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setCurrentQuestion(0);
-                  setAnswers([]);
-                  setShowEmailCollection(false);
-                  setShowResults(false);
-                  setUserEmail('');
-                }}
-              >
-                Retake Assessment
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <AssessmentResults
+        title="Longevity Score"
+        totalScore={totalScore}
+        categoryScores={scores}
+        recommendations={recommendations}
+        gradient="from-blue-500 to-emerald-500"
+        onRetake={() => {
+          setCurrentQuestion(0);
+          setAnswers([]);
+          setShowEmailCollection(false);
+          setShowResults(false);
+          setUserEmail('');
+        }}
+      />
     );
   }
 
@@ -276,30 +249,79 @@ export default function LongevityAssessment() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <Card>
+      <Card className="overflow-hidden">
+        <div className="h-1 bg-gradient-to-r from-blue-500 to-emerald-500" />
         <CardHeader>
           <div className="flex justify-between items-center mb-4">
-            <span className="text-sm text-gray-500">Question {currentQuestion + 1} of {questions.length}</span>
-            <span className="text-sm font-medium capitalize">{question.category}</span>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 text-sm text-gray-500">
+                <span className="font-medium">Question {currentQuestion + 1}</span>
+                <span className="text-gray-400">/</span>
+                <span>{questions.length}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {question.icon}
+              <span className="text-sm font-medium capitalize text-gray-700 dark:text-gray-300">{question.category}</span>
+            </div>
           </div>
-          <Progress value={progress} className="h-2 mb-4" />
-          <CardTitle className="text-xl">{question.question}</CardTitle>
+          <div className="mb-6">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Progress</span>
+              <span className="text-sm font-bold text-primary">{Math.round(progress)}%</span>
+            </div>
+            <Progress value={progress} className="h-3 bg-gray-100 dark:bg-gray-800" />
+          </div>
+          <CardTitle className="text-2xl mb-2 leading-tight">{question.question}</CardTitle>
+          <CardDescription className="text-sm">
+            Select an option below or use keyboard shortcuts (1-4)
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
+          <div className="space-y-3 mb-6">
             {question.options.map((option, index) => (
-              <Button
+              <motion.div
                 key={index}
-                variant="outline"
-                className="w-full text-left justify-start h-auto p-4"
-                onClick={() => handleAnswer(option.score)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <span className="flex items-center">
-                  <Circle className="h-4 w-4 mr-3 flex-shrink-0" />
-                  <span>{option.text}</span>
-                </span>
-              </Button>
+                <Button
+                  variant="outline"
+                  className="w-full text-left justify-between h-auto p-4 hover:bg-primary/10 hover:border-primary hover:shadow-md transition-all group relative"
+                  onClick={() => handleAnswer(option.score)}
+                >
+                  <span className="flex items-center flex-1">
+                    <div className="w-6 h-6 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-primary flex items-center justify-center mr-3 flex-shrink-0 transition-colors">
+                      <Circle className="h-3 w-3 opacity-0 group-hover:opacity-100 fill-primary text-primary transition-opacity" />
+                    </div>
+                    <span className="flex-1">{option.text}</span>
+                  </span>
+                  <span className="ml-3 px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs font-medium rounded flex-shrink-0">
+                    {index + 1}
+                  </span>
+                </Button>
+              </motion.div>
             ))}
+          </div>
+
+          <div className="flex items-center justify-between">
+            {currentQuestion > 0 ? (
+              <Button
+                variant="ghost"
+                onClick={handleBack}
+                className="hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                ← Back
+                <span className="ml-2 text-xs text-gray-500">(Backspace)</span>
+              </Button>
+            ) : (
+              <div></div>
+            )}
+
+            <div className="text-xs text-gray-500 dark:text-gray-400">
+              ⌨️ Keyboard shortcuts enabled
+            </div>
           </div>
         </CardContent>
       </Card>
