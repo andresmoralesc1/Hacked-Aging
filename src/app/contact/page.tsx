@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContactForm from '@/components/forms/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Hacked Aging',
@@ -66,58 +67,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div>
-              <form className="space-y-6" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact" />
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Your Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="w-full px-4 py-2 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                  ></textarea>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-medium rounded-md shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </div>
