@@ -1,10 +1,25 @@
+import dynamic from 'next/dynamic';
 import HeroSection from "@/components/sections/hero-section";
-import Medicine3Approach from "@/components/sections/medicine-3-approach";
-import FourPillars from "@/components/sections/four-pillars";
-import RecoveryLab from "@/components/sections/recovery-lab";
-import LatestFromChannel from "@/components/sections/latest-from-channel";
-import EnhancedTrustSignals from "@/components/sections/enhanced-trust-signals";
-import MedicalDisclaimer from "@/components/ui/medical-disclaimer";
+
+// Lazy load below-the-fold components for better performance
+const Medicine3Approach = dynamic(() => import("@/components/sections/medicine-3-approach"), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
+const FourPillars = dynamic(() => import("@/components/sections/four-pillars"), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
+const RecoveryLab = dynamic(() => import("@/components/sections/recovery-lab"), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
+const LatestFromChannel = dynamic(() => import("@/components/sections/latest-from-channel"), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
+const EnhancedTrustSignals = dynamic(() => import("@/components/sections/enhanced-trust-signals"), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
+const MedicalDisclaimer = dynamic(() => import("@/components/ui/medical-disclaimer"), {
+  loading: () => <div className="h-32 animate-pulse bg-gray-100 dark:bg-gray-800 rounded-lg" />
+});
 
 export default function Home() {
   return (

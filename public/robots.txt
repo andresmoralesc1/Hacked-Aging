@@ -1,29 +1,9 @@
+# Allow all bots
 User-agent: *
 Allow: /
 
-# Allow search engines to crawl all important pages
-Allow: /about
-Allow: /pillars
-Allow: /protocols
-Allow: /recovery
-Allow: /research
-Allow: /blog
-Allow: /tools
+# Sitemaps
+Sitemap: https://hacked-aging.vercel.app/sitemap.xml
 
-# Block unimportant directories
-Disallow: /api/
-Disallow: /_next/
-Disallow: /images/
-
-# Sitemap location
-Sitemap: https://hackedaging.com/sitemap.xml
-
-# Special rules for major crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Crawl delay for politeness
+# Crawl-delay for politeness
 Crawl-delay: 1
