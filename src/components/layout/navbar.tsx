@@ -29,7 +29,8 @@ export default function Navbar() {
             { href: "/recovery", label: "Recovery" },
             { href: "/protocols", label: "Protocols" },
             { href: "/research", label: "Research" },
-            { href: "/about", label: "About" }
+            { href: "/team", label: "Team" },
+            { href: "/about", label: "About Dr. Henkle" }
           ].map((item) => (
             <Link
               key={item.href}
@@ -81,7 +82,8 @@ export default function Navbar() {
                 { href: "/recovery", label: "Recovery Lab" },
                 { href: "/protocols", label: "Protocols" },
                 { href: "/research", label: "Research" },
-                { href: "/about", label: "About" }
+                { href: "/team", label: "Team" },
+                { href: "/about", label: "About Dr. Henkle" }
               ].map((item) => (
                 <Link
                   key={item.href}

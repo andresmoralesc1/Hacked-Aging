@@ -52,7 +52,7 @@ const schemaMarkup = {
   "mainEntity": {
     "@type": "Person",
     "name": "Dr. Talia Henkle, PhD",
-    "jobTitle": ["Copy Editor and Writer, Medical and Health Content", "Science Writer"],
+    "jobTitle": ["Co-Founder & Chief Science Officer", "Copy Editor and Writer, Medical and Health Content", "Science Writer"],
     "worksFor": {
       "@type": "Organization",
       "name": "American Cancer Society",
@@ -94,12 +94,18 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               About Dr. Talia Henkle, PhD
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
-              Science Writer & Medical Content Expert
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+              Co-Founder & Chief Science Officer
             </p>
             <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-6">
-              Copy Editor and Writer at American Cancer Society | Johns Hopkins PhD
+              Copy Editor at American Cancer Society | Johns Hopkins PhD
             </p>
+            <div className="flex justify-center gap-3 mb-6">
+              <a href="/team" className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-md text-sm">
+                <Users className="h-4 w-4" />
+                Meet the Full Team
+              </a>
+            </div>
             <div className="flex justify-center gap-4 mb-6">
               <a
                 href="https://www.linkedin.com/in/taliahenkle"
@@ -137,8 +143,11 @@ export default function About() {
                   diverse age, cultural, and educational backgrounds.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Through Hacked Aging, Dr. Henkle applies her expertise in translating cutting-edge medical science
-                  into practical longevity protocols, making evidence-based health optimization accessible to everyone.
+                  As <strong>Co-Founder and Chief Science Officer</strong> of Hacked Aging, Dr. Henkle partners with
+                  <a href="/team" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 font-semibold ml-1">
+                    Andrés Morales
+                  </a>, an AI automation expert, to translate cutting-edge medical science into AI-powered,
+                  accessible longevity protocols. Together, they make evidence-based health optimization available to everyone.
                 </p>
               </CardContent>
             </Card>

@@ -11,18 +11,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Hacked Aging - Science-Backed Longevity for High-Performance 40+",
-  description: "Expert-led longevity platform translating Medicine 3.0 breakthroughs into daily protocols. Led by Dr. Talia Chen (Johns Hopkins PhD) and strategic health optimization specialists.",
-  keywords: "longevity, health over 40, medicine 3.0, biohacking, performance optimization, Johns Hopkins, Dr. Talia Chen",
+  description: "AI-powered longevity platform co-founded by Andrés Morales (AI & Automation Expert) and Dr. Talia Henkle (Johns Hopkins PhD, American Cancer Society). Translating Medicine 3.0 breakthroughs into accessible daily protocols.",
+  keywords: "longevity, health over 40, medicine 3.0, biohacking, performance optimization, Johns Hopkins, AI automation, Dr. Talia Henkle, Andrés Morales",
   authors: [
-    { name: "Dr. Talia Chen, PhD", url: "https://linkedin.com/in/talia-chen-phd-johns-hopkins" },
-    { name: "Andrés Morales", url: "https://linkedin.com/in/andres-morales-hacked-aging" }
+    { name: "Andrés Morales", url: "https://linkedin.com/in/andresmoralesc1" },
+    { name: "Dr. Talia Henkle, PhD", url: "https://linkedin.com/in/taliahenkle" }
   ],
-  creator: "Hacked Aging Team",
+  creator: "Andrés Morales & Dr. Talia Henkle",
   publisher: "Hacked Aging",
   metadataBase: new URL("https://hacked-aging.vercel.app"),
   openGraph: {
     title: "Hacked Aging - Science-Backed Longevity for High-Performance 40+",
-    description: "Expert-led longevity platform translating Medicine 3.0 breakthroughs into daily protocols. Led by Dr. Talia Chen (Johns Hopkins PhD) and strategic health optimization specialists.",
+    description: "AI-powered longevity platform co-founded by Andrés Morales and Dr. Talia Henkle (Johns Hopkins PhD, American Cancer Society). Translating Medicine 3.0 into accessible protocols.",
     url: "https://hacked-aging.vercel.app",
     siteName: "Hacked Aging",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hacked Aging - Science-Backed Longevity",
-    description: "Expert-led longevity platform translating Medicine 3.0 breakthroughs into daily protocols.",
+    description: "AI-powered platform by Andrés Morales & Dr. Talia Henkle. Translating Medicine 3.0 into accessible protocols.",
     images: ["/images/pexels-longevity.jpg"],
     creator: "@hackedaging",
   },
