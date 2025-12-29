@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Zap, Heart, Brain, ArrowRight, TrendingUp, Users, Award } from "lucide-react";
 import MedicalDisclaimer from "@/components/ui/medical-disclaimer";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function PillarsPage() {
   const [activePillar, setActivePillar] = useState<number | null>(null);
@@ -135,11 +136,12 @@ export default function PillarsPage() {
               >
                 {/* Pillar Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={pillar.image} 
+                  <Image
+                    src={pillar.image}
                     alt={pillar.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent`}></div>
                   
@@ -236,12 +238,16 @@ export default function PillarsPage() {
               for your current situation and advance step by step.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Start Free Assessment
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                View Protocols
-              </Button>
+              <a href="/assessment">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                  Start Free Assessment
+                </Button>
+              </a>
+              <a href="/protocols">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
+                  View Protocols
+                </Button>
+              </a>
             </div>
           </div>
         </div>

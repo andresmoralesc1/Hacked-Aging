@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Brain, Zap, Shield, CheckCircle, Users, TrendingUp, Play, Clock } from "lucide-react";
 import MedicalDisclaimer from "@/components/ui/medical-disclaimer";
+import Image from "next/image";
 
 export default function RecoveryPage() {
   const recoveryProtocols = [
@@ -131,11 +132,12 @@ export default function RecoveryPage() {
               >
                 {/* Protocol Header Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image
                     src={protocol.image}
                     alt={protocol.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   
@@ -200,10 +202,12 @@ export default function RecoveryPage() {
                   </div>
 
                   {/* Action Button */}
-                  <Button className={`w-full bg-gradient-to-r ${protocol.color} hover:opacity-90 transition-all duration-300 group-hover:scale-105`}>
-                    <Play className="h-4 w-4 mr-2" />
-                    Start Protocol
-                  </Button>
+                  <a href="/assessment">
+                    <Button className={`w-full bg-gradient-to-r ${protocol.color} hover:opacity-90 transition-all duration-300 group-hover:scale-105`}>
+                      <Play className="h-4 w-4 mr-2" />
+                      Start Protocol
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}

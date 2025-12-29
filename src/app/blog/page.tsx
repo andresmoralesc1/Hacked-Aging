@@ -5,13 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Clock, ArrowRight, Heart, TrendingUp, MessageCircle, Shield } from "lucide-react";
 import MedicalDisclaimer from "@/components/ui/medical-disclaimer";
+import Image from "next/image";
 
 export default function BlogPage() {
   const posts = [
     {
       id: 1,
       title: "Zone 2 Training Reduces Biological Age 2.3 Years: Meta-Analysis",
-      author: "Dr. Talia Chen, PhD",
+      author: "Dr. Talia Henkle, PhD",
       date: "December 15, 2024",
       readTime: "8 min",
       category: "Exercise",
@@ -45,7 +46,7 @@ export default function BlogPage() {
     {
       id: 3,
       title: "Sleep Architecture: The Sleep Blueprint That Reverses Aging",
-      author: "Dr. Talia Chen, PhD",
+      author: "Dr. Talia Henkle, PhD",
       date: "December 10, 2024",
       readTime: "10 min",
       category: "Recovery",
@@ -120,14 +121,6 @@ export default function BlogPage() {
                 <Clock className="h-4 w-4" />
                 5-15 min read
               </div>
-              <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                Escrito por expertos
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                5-15 min lectura
-              </div>
             </div>
           </div>
         </div>
@@ -148,11 +141,12 @@ export default function BlogPage() {
               >
                 {/* Post Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   
@@ -246,13 +240,17 @@ export default function BlogPage() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                <Heart className="h-5 w-5 mr-2" />
-                Subscribe Free
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                View All Articles
-              </Button>
+              <a href="https://www.youtube.com/@hackedaging?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Heart className="h-5 w-5 mr-2" />
+                  Subscribe on YouTube
+                </Button>
+              </a>
+              <a href="/research">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
+                  View All Research
+                </Button>
+              </a>
             </div>
             
             <div className="flex justify-center gap-8 text-sm text-muted-foreground">

@@ -136,17 +136,17 @@ export default function ToolsPage() {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="flex-1" asChild>
-                    <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
+                  <a href="/assessment">
+                    <Button size="lg" className="flex-1">
                       <ExternalLink className="h-4 w-4 mr-2" />
-                       View Full Analysis
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="lg" asChild>
-                    <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
-                       Buy with Discount
-                    </a>
-                  </Button>
+                      Get Personalized Recommendations
+                    </Button>
+                  </a>
+                  <a href="/protocols">
+                    <Button variant="outline" size="lg">
+                      View Related Protocols
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -182,16 +182,16 @@ export default function ToolsPage() {
                     </p>
                     
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline" className="flex-1" asChild>
-                        <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
+                      <a href="/assessment" className="flex-1">
+                        <Button size="sm" variant="outline" className="w-full">
                           View Analysis
-                        </a>
-                      </Button>
-                      <Button size="sm" asChild>
-                        <a href={tool.affiliateLink} target="_blank" rel="noopener noreferrer">
-                          Buy
-                        </a>
-                      </Button>
+                        </Button>
+                      </a>
+                      <a href="/protocols">
+                        <Button size="sm">
+                          Protocols
+                        </Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>

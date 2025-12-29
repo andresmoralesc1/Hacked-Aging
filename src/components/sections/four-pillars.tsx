@@ -22,25 +22,25 @@ const pillars: Pillar[] = [
     benefit: "22% improvement in cellular energy production",
     icon: <Heart className="h-6 w-6" />,
     gradient: "from-red-600 to-orange-600",
-    link: "/metabolic"
+    link: "/pillars"
   },
   {
-    id: "2", 
+    id: "2",
     title: "Functional Muscle",
     description: "Build muscle as a protective 'longevity organ.' Strategies to combat sarcopenia and maintain independence into your 80s.",
     benefit: "3.5x reduction in all-cause mortality",
     icon: <Dumbbell className="h-6 w-6" />,
     gradient: "from-blue-600 to-indigo-600",
-    link: "/muscle"
+    link: "/pillars"
   },
   {
     id: "3",
-    title: "Hormonal Precision", 
+    title: "Hormonal Precision",
     description: "Evidence-based protocols for Perimenopause and Andropause. Reclaim your energy through clinical-grade lifestyle interventions.",
     benefit: "47% improvement in energy and vitality",
     icon: <Brain className="h-6 w-6" />,
     gradient: "from-purple-600 to-pink-600",
-    link: "/hormones"
+    link: "/pillars"
   },
   {
     id: "4",
@@ -49,7 +49,7 @@ const pillars: Pillar[] = [
     benefit: "2.8x improvement in cognitive processing speed",
     icon: <Zap className="h-6 w-6" />,
     gradient: "from-emerald-600 to-cyan-600",
-    link: "/cognitive"
+    link: "/pillars"
   }
 ];
 
@@ -125,12 +125,16 @@ export default function FourPillars() {
                   plus a personalized 90-day protocol to address all four systematically.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600">
-                    Take Free Assessment
-                  </Button>
-                  <Button variant="outline" size="lg">
-                    Download Protocol PDF
-                  </Button>
+                  <a href="/assessment">
+                    <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600">
+                      Take Free Assessment
+                    </Button>
+                  </a>
+                  <a href="/protocols">
+                    <Button variant="outline" size="lg">
+                      View All Protocols
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

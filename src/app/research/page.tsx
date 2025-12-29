@@ -221,14 +221,16 @@ export default function ResearchPage() {
                         <span>{paper.downloads.toLocaleString()} downloads</span>
                         <span>{paper.citations} citations</span>
                       </div>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="text-xs hover:bg-muted"
-                      >
-                        <ExternalLink className="h-3 w-3 mr-1" />
-                        DOI: {paper.doi}
-                      </Button>
+                      <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-xs hover:bg-muted"
+                        >
+                          <ExternalLink className="h-3 w-3 mr-1" />
+                          DOI: {paper.doi}
+                        </Button>
+                      </a>
                     </div>
                   </CardContent>
                 </div>
@@ -250,12 +252,16 @@ export default function ResearchPage() {
               biomarker analysis to optimize your longevity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
-                Premium Access
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
-                Free Library
-              </Button>
+              <a href="/assessment">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300">
+                  Start Free Assessment
+                </Button>
+              </a>
+              <a href="/protocols">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-muted transition-all duration-300">
+                  View Protocols
+                </Button>
+              </a>
             </div>
           </div>
         </div>
