@@ -36,9 +36,9 @@ export default function RecoveryPage() {
       difficulty: "Intermediate",
       benefits: ["Cellular energy", "Longevity", "Metabolic function", "Performance"],
       stats: [
-        { metric: "Producción ATP", improvement: "+120%" },
-        { metric: "Eficiencia mitocondrial", improvement: "+80%" },
-        { metric: "Oxidación reducida", improvement: "-65%" }
+        { metric: "ATP Production", improvement: "+120%" },
+        { metric: "Mitochondrial efficiency", improvement: "+80%" },
+        { metric: "Reduced oxidation", improvement: "-65%" }
       ],
       protocol: "mitochondrial-enhancement",
       color: "from-green-500 to-emerald-600"

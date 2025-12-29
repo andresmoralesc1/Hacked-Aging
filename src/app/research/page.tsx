@@ -117,7 +117,7 @@ export default function ResearchPage() {
               </div>
               <div className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" />
-                Factor impacto promedio: 18.3
+                Average impact factor: 18.3
               </div>
             </div>
           </div>

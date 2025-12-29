@@ -59,7 +59,7 @@ export default function ProtocolsPage() {
       level: "All levels",
       category: "Recovery",
       equipment: ["Sleep monitor", "Targeted supplementation"],
-      frequency: "Diario",
+      frequency: "Daily",
       benefits: ["Recovery", "Hormones", "Cognition", "Energy"],
       protocol: "sleep-optimization",
       stats: [
@@ -79,7 +79,7 @@ export default function ProtocolsPage() {
       level: "Advanced",
       category: "Metabolism",
       equipment: ["Glucose meter", "Measuring tape", "Tracking app"],
-      frequency: "Diario",
+      frequency: "Daily",
       benefits: ["Weight", "Energy", "Mental clarity", "Longevity"],
       protocol: "metabolic-reset",
       stats: [
