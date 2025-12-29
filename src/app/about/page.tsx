@@ -94,19 +94,20 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  <strong>Hacked Aging was born from a decade-long friendship</strong> between Andrés Morales,
-                  an AI automation expert, and Dr. Talia Henkle, a Johns Hopkins-trained scientist specializing
-                  in cancer and immunology research.
+                  <strong>Hacked Aging was born from a decade-long friendship</strong> between Dr. Talia Henkle,
+                  a Johns Hopkins-trained immunologist and medical writer at the American Cancer Society, and Andrés Morales,
+                  an AI automation expert passionate about making science accessible.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Andrés envisioned a platform that could make cutting-edge longevity science accessible to everyone—not
-                  just academics and biohackers. He partnered with Talia, whose deep expertise in medical research and
-                  science communication at the American Cancer Society, made her the perfect co-founder to translate
-                  complex Medicine 3.0 concepts into actionable protocols.
+                  After years of translating complex cancer and immunology research for millions of patients,
+                  <strong>Dr. Henkle recognized the need to shift medicine from reactive treatment to proactive longevity optimization</strong>.
+                  Her deep expertise in peer-reviewed research and science communication became the scientific foundation of Hacked Aging,
+                  ensuring every protocol is backed by rigorous evidence from institutions like Johns Hopkins and the American Cancer Society.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Together, they combine <strong>AI-powered automation</strong> with <strong>peer-reviewed medical science</strong>
-                  to create a longevity platform that's both evidence-based and accessible.
+                  Partnering with Andrés, who brings cutting-edge AI automation to personalize protocols at scale,
+                  <strong>Dr. Henkle's vision came to life</strong>: a platform where Medicine 3.0 research becomes accessible
+                  to everyone—not just elite biohackers—through the perfect marriage of peer-reviewed medical science and intelligent technology.
                 </p>
               </CardContent>
             </Card>
