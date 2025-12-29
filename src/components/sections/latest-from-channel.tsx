@@ -18,7 +18,7 @@ const latestVideos: Video[] = [
     id: "1",
     title: "Zone 2 Training: The Sweet Spot for Longevity",
     description: "Deep dive into why 180-age HR zone is optimal for mitochondrial biogenesis and fat adaptation.",
-    thumbnail: "/api/placeholder/320/180",
+    thumbnail: "/images/pillars-strength.jpg",
     duration: "18:24",
     views: "45.2K",
     publishedAt: "2 days ago",
@@ -28,7 +28,7 @@ const latestVideos: Video[] = [
     id: "2",
     title: "HRV Optimization: Biohacking Your Recovery",
     description: "Master your Heart Rate Variability with evidence-based protocols from WHOOP and Oura data.",
-    thumbnail: "/api/placeholder/320/180",
+    thumbnail: "/images/recovery-therapy.jpg",
     duration: "22:15",
     views: "38.7K",
     publishedAt: "5 days ago",
@@ -38,7 +38,7 @@ const latestVideos: Video[] = [
     id: "3",
     title: "NAD+ Precursors: Do They Actually Work?",
     description: "Comprehensive analysis of NMN, NR, and NAMPT activation for cellular rejuvenation.",
-    thumbnail: "/api/placeholder/320/180",
+    thumbnail: "/images/protocols-medical.jpg",
     duration: "28:42",
     views: "52.1K",
     publishedAt: "1 week ago",
@@ -118,7 +118,7 @@ export default function LatestFromChannel() {
                   </div>
                   
                   <Button size="sm" className="w-full group" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/@hackedaging" target="_blank" rel="noopener noreferrer">
                       <Play className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                       Watch Now
                     </a>
@@ -149,13 +149,13 @@ export default function LatestFromChannel() {
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" className="bg-gradient-to-r from-red-600 to-blue-600" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/@hackedaging?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
                       <TrendingUp className="h-4 w-4 mr-2" />
                       Subscribe on YouTube
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <a href="#">Get Weekly Email Summaries</a>
+                    <a href="/contact">Get Weekly Email Summaries</a>
                   </Button>
                 </div>
                 

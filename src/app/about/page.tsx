@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Brain, Code, Users, Lightbulb, Award, Briefcase, GraduationCap } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -117,6 +118,20 @@ export default function AboutPage() {
             {/* Andrés Morales */}
             <Card className="border-blue-200 dark:border-blue-800 shadow-xl hover:shadow-2xl transition-all duration-300">
               <CardHeader className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 pb-6">
+                {/* Profile Photo */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden ring-4 ring-blue-200 dark:ring-blue-700 shadow-lg">
+                    <Image
+                      src="/images/andres-morales.jpeg"
+                      alt="Andrés Morales - Co-Founder & CTO of Hacked Aging"
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                      priority
+                    />
+                  </div>
+                </div>
+
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -212,6 +227,20 @@ export default function AboutPage() {
             {/* Dr. Talia Henkle */}
             <Card className="border-emerald-200 dark:border-emerald-800 shadow-xl hover:shadow-2xl transition-all duration-300">
               <CardHeader className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30 pb-6">
+                {/* Profile Photo */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden ring-4 ring-emerald-200 dark:ring-emerald-700 shadow-lg">
+                    <Image
+                      src="/images/talia-henkle.jpeg"
+                      alt="Dr. Talia Henkle, PhD - Co-Founder & CSO of Hacked Aging"
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                      priority
+                    />
+                  </div>
+                </div>
+
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">

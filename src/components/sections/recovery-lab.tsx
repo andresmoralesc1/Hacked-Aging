@@ -129,14 +129,14 @@ export default function RecoveryLab() {
                   
                   <div className="space-y-2">
                     <Button size="sm" className="w-full bg-gradient-to-r from-emerald-600 to-blue-600" asChild>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
+                      <a href="/assessment">
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        View Full Analysis
+                        Get Personalized Assessment
                       </a>
                     </Button>
                     <Button variant="outline" size="sm" className="w-full" asChild>
-                      <a href="#" target="_blank" rel="noopener noreferrer">
-                        Shop with Discount
+                      <a href="/protocols">
+                        View Related Protocols
                       </a>
                     </Button>
                   </div>
