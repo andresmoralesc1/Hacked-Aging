@@ -26,14 +26,14 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 pt-1 animate-fade-in-up animation-delay-600">
-              <a href="/assessment" aria-label="Start your personalized health assessment">
-                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto">
-                  Start Your Assessment
+              <a href="/assessment" aria-label="Take your personalized health assessment">
+                <Button size="lg" className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:focus:ring-emerald-800 w-full sm:w-auto">
+                  Start Free Assessment
                 </Button>
               </a>
-              <a href="/assessment" aria-label="Take the free health assessment">
-                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
-                  Free Health Assessment
+              <a href="/protocols" aria-label="View our science-backed protocols">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/50 w-full sm:w-auto">
+                  View Protocols
                 </Button>
               </a>
             </div>

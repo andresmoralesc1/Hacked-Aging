@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-3 group hover-lift transition-all duration-300">
@@ -22,25 +24,29 @@ export default function Navbar() {
           </Link>
           
           {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium" role="navigation" aria-label="Main navigation">
           {[
-            { href: "/", label: "Home", active: true },
+            { href: "/", label: "Home" },
             { href: "/pillars", label: "4 Pillars" },
             { href: "/recovery", label: "Recovery" },
             { href: "/protocols", label: "Protocols" },
             { href: "/research", label: "Research" },
             { href: "/about", label: "About Us" }
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`transition-all duration-300 hover:text-foreground hover:bg-gray-100/50 dark:hover:bg-gray-800/50 px-4 py-2 rounded-lg font-medium ${
-                item.active ? 'bg-primary/10 text-primary' : ''
-              } hover-lift`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          ].map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`transition-all duration-300 hover:text-foreground hover:bg-gray-100/50 dark:hover:bg-gray-800/50 px-4 py-2 rounded-lg font-medium ${
+                  isActive ? 'bg-primary/10 text-primary font-semibold' : ''
+                } hover-lift focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
           
           {/* Desktop Actions */}
@@ -60,8 +66,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -73,8 +81,8 @@ export default function Navbar() {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200 dark:border-gray-800">
-            <nav className="flex flex-col space-y-3">
+          <div id="mobile-menu" className="lg:hidden py-4 border-t border-gray-200 dark:border-gray-800 animate-slide-in-down">
+            <nav className="flex flex-col space-y-3" role="navigation" aria-label="Mobile navigation">
               {[
                 { href: "/", label: "Home" },
                 { href: "/pillars", label: "Pillars" },
@@ -82,16 +90,22 @@ export default function Navbar() {
                 { href: "/protocols", label: "Protocols" },
                 { href: "/research", label: "Research" },
                 { href: "/about", label: "About Us" }
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              ].map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-3 py-2 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary ${
+                      isActive ? 'bg-primary/10 text-primary font-semibold' : ''
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200 dark:border-gray-800">
                 <Link href="/assessment" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="ghost" size="lg" className="justify-start hover:bg-gray-100 dark:hover:bg-gray-800 w-full">
