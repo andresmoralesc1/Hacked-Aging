@@ -15,7 +15,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a question or want to learn more? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+              Have questions about longevity optimization? Our expert team typically responds within 24 business hours.
             </p>
           </div>
 

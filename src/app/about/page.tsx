@@ -94,20 +94,20 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  <strong>Hacked Aging was born from a decade-long friendship</strong> between Dr. Talia Henkle,
-                  a Johns Hopkins-trained immunologist and medical writer at the American Cancer Society, and Andrés Morales,
-                  an AI automation expert passionate about making science accessible.
+                  <strong>Hacked Aging was founded by two complementary experts</strong> who met a decade ago and shared a vision:
+                  Dr. Talia Henkle, a Johns Hopkins-trained immunologist and medical writer at the American Cancer Society,
+                  and Andrés Morales, an AI automation expert passionate about making cutting-edge health science accessible to everyone.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  After years of translating complex cancer and immunology research for millions of patients,
-                  <strong>Dr. Henkle recognized the need to shift medicine from reactive treatment to proactive longevity optimization</strong>.
-                  Her deep expertise in peer-reviewed research and science communication became the scientific foundation of Hacked Aging,
-                  ensuring every protocol is backed by rigorous evidence from institutions like Johns Hopkins and the American Cancer Society.
+                  After translating complex cancer and immunology research for millions of patients (60M+ website views),
+                  <strong>Dr. Henkle identified a critical gap: medicine focused on treating disease rather than preventing it</strong>.
+                  Her expertise in peer-reviewed research and evidence-based science communication provides the scientific foundation,
+                  ensuring every Hacked Aging protocol is validated by rigorous studies from leading institutions.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Partnering with Andrés, who brings cutting-edge AI automation to personalize protocols at scale,
-                  <strong>Dr. Henkle's vision came to life</strong>: a platform where Medicine 3.0 research becomes accessible
-                  to everyone—not just elite biohackers—through the perfect marriage of peer-reviewed medical science and intelligent technology.
+                  Andrés brings 10+ years of AI automation and UX expertise to scale personalized health optimization.
+                  Together, they created <strong>a platform where Medicine 3.0 research becomes actionable for everyone</strong>—not just elite biohackers—
+                  through the fusion of peer-reviewed medical science and intelligent, user-friendly technology.
                 </p>
               </CardContent>
             </Card>
@@ -169,9 +169,9 @@ export default function AboutPage() {
                     About
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Science writer and medical content expert with <strong>60M+ website views</strong> at
-                    the American Cancer Society. Johns Hopkins PhD specializing in cancer, immunology,
-                    and virology research.
+                    Johns Hopkins-trained PhD immunologist and science writer with <strong>60M+ medical content views</strong>
+                    reaching millions of patients through the American Cancer Society. Expert in translating peer-reviewed
+                    cancer and immunology research into accessible, evidence-based health guidance.
                   </p>
                 </div>
 
@@ -185,7 +185,7 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       <strong>American Cancer Society</strong> - Copy Editor & Writer
                     </p>
-                    <p className="text-xs text-gray-500">2023 - Present | Medical Content</p>
+                    <p className="text-xs text-gray-500">Since 2023 | Medical Content</p>
                   </div>
                 </div>
 
@@ -298,9 +298,9 @@ export default function AboutPage() {
                     About
                   </h4>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Fractional AI consultant and automation leader with <strong>10+ years of experience</strong> in
-                    B2B sales, executive search, and digital strategy. Founder of <strong>Neural Flow</strong>,
-                    specializing in AI-powered systems for businesses worldwide.
+                    Fractional AI consultant and automation architect with <strong>10+ years scaling AI-powered solutions</strong>
+                    for businesses worldwide. Founder of <strong>Neural Flow</strong>, specializing in intelligent automation,
+                    UX design, and making complex technology accessible through elegant, user-friendly interfaces.
                   </p>
                 </div>
 
@@ -314,7 +314,7 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       <strong>Neural Flow</strong> - AI & Web Developer
                     </p>
-                    <p className="text-xs text-gray-500">June 2022 - Present | Worldwide</p>
+                    <p className="text-xs text-gray-500">Since June 2022 | Worldwide</p>
                   </div>
                 </div>
 

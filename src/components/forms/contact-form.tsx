@@ -29,10 +29,14 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
+            autoComplete="name"
+            autoCapitalize="words"
             onFocus={() => setFocusedField("name")}
             onBlur={() => setFocusedField(null)}
             whileFocus={{ scale: 1.01 }}
             className="w-full px-4 py-3 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            aria-label="Full name"
+            aria-required="true"
           />
         </motion.div>
 
@@ -49,10 +53,16 @@ export default function ContactForm() {
             id="email"
             name="email"
             required
+            autoComplete="email"
+            inputMode="email"
+            autoCapitalize="none"
+            autoCorrect="off"
             onFocus={() => setFocusedField("email")}
             onBlur={() => setFocusedField(null)}
             whileFocus={{ scale: 1.01 }}
             className="w-full px-4 py-3 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            aria-label="Email address"
+            aria-required="true"
           />
         </motion.div>
 
@@ -69,10 +79,13 @@ export default function ContactForm() {
             name="message"
             rows={4}
             required
+            autoCapitalize="sentences"
             onFocus={() => setFocusedField("message")}
             onBlur={() => setFocusedField(null)}
             whileFocus={{ scale: 1.01 }}
             className="w-full px-4 py-3 border border-input bg-background rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            aria-label="Your message"
+            aria-required="true"
           />
         </motion.div>
 

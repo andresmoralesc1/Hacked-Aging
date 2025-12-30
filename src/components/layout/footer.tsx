@@ -156,7 +156,12 @@ export default function Footer() {
                   placeholder="your@email.com"
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
+                  autoComplete="email"
+                  inputMode="email"
+                  autoCapitalize="none"
+                  autoCorrect="off"
                   className="w-full px-4 py-3 pr-12 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background text-sm"
+                  aria-label="Email address for newsletter"
                 />
                 <Button 
                   className="absolute right-1 top-1 bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 h-10 w-10 p-0 transition-all duration-300 hover-lift"

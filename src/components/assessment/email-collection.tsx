@@ -85,10 +85,17 @@ export default function EmailCollection({ onSubmit, assessmentTitle, gradient = 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
+                  autoComplete="email"
+                  inputMode="email"
+                  autoCapitalize="none"
+                  autoCorrect="off"
                   whileFocus={{ scale: 1.01 }}
                   className="w-full px-5 py-4 border-2 border-input bg-background rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                   disabled={isSubmitting}
+                  aria-label="Email address"
+                  aria-required="true"
+                  aria-invalid={error ? "true" : "false"}
                 />
                 {error && (
                   <motion.p

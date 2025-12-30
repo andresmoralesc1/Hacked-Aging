@@ -77,10 +77,12 @@ export default function RootLayout({
         <link rel="prefetch" href="/protocols" />
 
         {/* Viewport optimization */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
 
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#10b981" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ToastProvider>
